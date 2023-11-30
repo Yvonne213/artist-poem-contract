@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  
+  /* font-family: "pf-videotext", sans-serif;
+  font-weight: 400;
+  font-style: normal; */
+  font-family: "eurostile-extended", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  margin: 0;
+}
+
+main {
+  padding-top: 20px;
+}
+
+.current-artist-container {
+  height: 100%;
+}
+
+
+
+
+
+.title1 {
+  margin-top: 0;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 0.6;
+}
+
+.title2 {
+
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+
+  line-height: 0.6;
+}
+
+.terminal1 {
+
+  margin: auto;
+  /* Center the div horizontally */
+  border: 1px solid #fc8888;
+  padding: 20px;
+  white-space: pre-wrap;
+  max-width: 400px;
+  font-size: 20px;
+  /* Hide scrollbars */
+  
+  
+  color: #fc8888;
+  font-family: "eurostile-extended", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+
+}
+
+
+.terminal2 {
+
+  margin: auto;
+  /* Center the div horizontally */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  font-size: 20px;
+  list-style: none;
+  /* Remove the default list-style */
+  border: 1px solid #fc8888;
+  padding: 20px;
+  white-space: pre-wrap;
+  /* Add the ability to scroll */
+  scroll-behavior: smooth;
+  overflow: scroll;
+  
+  height: 75vh;
+  max-width: 400px;
+}
+
+.terminal2::-webkit-scrollbar {
+  display: none;
+}
+
+#history li {
+
+  width: 100%;
+  /* border-bottom: 1px dotted black; */
+  border-style: hidden;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+
+}
+
+
+
