@@ -1,0 +1,91 @@
+body,
+html {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+
+
+  font-family: "magistral", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  /*make the content in the center*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  align-items: center;
+  /* Center content horizontally */
+  min-height: 100vh;
+}
+
+.tips {
+  font-size: clamp(2vw, 1vw, 4vw);
+  /*!!!based on the screen size to change*/
+  color: #f7c6c6;
+}
+
+.previous-artist-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border: clamp(0.1vw, 0.2vw, 0.6vw) solid #f7c6c6;
+  width: 60vw;
+  /*!!!based on the screen size to adjust*/
+  height: 87vh;
+
+  overflow: auto;
+  overflow: hidden;
+  /* Hide any content that overflows */
+}
+
+
+.history-list {
+  text-align: center;
+  box-sizing: border-box;
+  overflow: auto;
+
+  white-space: pre-wrap;
+  /* Add the ability to scroll */
+  scroll-behavior: smooth;
+  overflow: scroll;
+  max-width: 100vw;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  font-size: clamp(0.5vw, 3vw, 100vw);
+  /*!!!based on the screen size to adjust*/
+  list-style: none;
+  /* Remove the default list-style */
+  padding: clamp(2vw, 1vw, 10vw);
+  margin: 0;
+
+}
+
+.history-list::-webkit-scrollbar {
+  display: none;
+}
+
+#history li {
+  width: 100%;
+  /* border-bottom: 1px dotted black; */
+  border-style: hidden;
+  padding: clamp(2vw, 4vw, 40vw) 0;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 300px) {
+
+  .previous-artist-container,
+  .history-list {
+    width: 100vw;
+  }
+}

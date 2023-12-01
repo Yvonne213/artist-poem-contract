@@ -20,7 +20,7 @@ body {
   min-height: 100vh;
 }
 
-.bg{
+.bg {
   position: fixed;
   top: 0;
   left: 0;
@@ -56,13 +56,15 @@ body {
   /* margin-left: 100px; */
   /* margin-top: 100px; */
 }
+
 /********************/
 .marquees {
   background-color: #e3878727;
   border: 2px solid #ffffff;
   padding: 20px;
-  font-size:clamp(20px, 1vw, 30px);
+  font-size: clamp(20px, 1vw, 30px);
 }
+
 .moving1 {
   /* Set the text size to 20 pixels */
   color: #ff000079;
@@ -77,6 +79,7 @@ body {
   /* Set the text size to 20 pixels */
   color: #0088ff79;
 }
+
 /********************/
 .typein {
   text-align: left;
@@ -90,7 +93,8 @@ body {
   /* Add some padding for better visibility */
   /*width: 460px; /* Set the width of the session */
   /* Set the height of the session */
-  line-height: 0.7; /* Adjust the line-height value as needed */
+  line-height: 0.7;
+  /* Adjust the line-height value as needed */
   border: 2px solid #ffffff;
 }
 
@@ -118,10 +122,11 @@ input:hover {
 
   background-color: #03b8e51b;
 }
+
 /********************/
 .button1,
 .button2 {
-  
+
   padding: 20px;
   background-color: #e01e1e2d;
   color: rgb(231, 110, 110);
@@ -134,14 +139,16 @@ input:hover {
 
   border-radius: 5px;
   aspect-ratio: 1 / 1;
-  flex-grow: 1; 
-  width: 100%; /* Set width to 100% for responsiveness */
-  max-width: 310px; /* Set a maximum width for larger screens */
+  flex-grow: 1;
+  width: 100%;
+  /* Set width to 100% for responsiveness */
+  max-width: 310px;
+  /* Set a maximum width for larger screens */
 
 }
 
 button:hover {
-  background-color: #3de2ff42;
+  background-color: #0088ff31;
   box-shadow: 0 8px 16px 0 rgba(124, 242, 255, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
 
@@ -155,10 +162,11 @@ button:hover {
   padding: 20px;
   /* Add some padding for better visibility */
   /* width: 480px; /* Set the width of the session */
- 
+
   /* Set the height of the session */
   border: 2px solid #ffffff;
 }
+
 /***************************************/
 .session2 {
   background-color: #e3757527;
@@ -168,14 +176,15 @@ button:hover {
   /* Set the height of the session */
   border: 2px solid #ffffff;
 
- 
+
 }
+
 h1 {
   white-space: nowrap;
   font-size: clamp(10px, 20px + 2vw, 80px);
   text-align: center;
-margin:auto;
-  
+  margin: auto;
+
 }
 
 /********************/
@@ -186,7 +195,7 @@ margin:auto;
   margin: auto; /* Center the div horizontally */
   color: #0088ff79;
 
-  font-size:clamp(22px, 1.2vw, 35px);
+  font-size: clamp(22px, 1.2vw, 35px);
   font-family: "magistral", sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -194,16 +203,18 @@ margin:auto;
   background-color: rgba(255, 255, 255, 0.119);
   padding: 20px;
 }
+
 /********************/
-.typein-history{
+.typein-history {
   border: 1.5px solid #f7c6c6;
   /* max-width: 800px; */
   padding: 10px;
   /* margin: auto;  */
   font-size: 20px;
   background-color: rgba(255, 255, 255, 0.201);
-  
+
 }
+
 .note {
   margin-top: -20px;
   font-size: clamp(22px, 1vw, 20px);
@@ -211,6 +222,7 @@ margin:auto;
   font-weight: 500;
   font-style: normal;
 }
+
 .history-record {
   text-align: left;
   margin: auto;
@@ -218,9 +230,10 @@ margin:auto;
   white-space: pre-wrap;
   max-height: 37vh;
   /* max-width: 800px; */
-  overflow-y: auto; /* Enable vertical scrolling when content exceeds the height */
+  overflow-y: auto;
+  /* Enable vertical scrolling when content exceeds the height */
 
-  font-size:clamp(18px, 1vw, 35px);
+  font-size: clamp(18px, 1vw, 35px);
   font-family: "magistral", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -250,7 +263,7 @@ margin:auto;
   padding: 40px;
   /* Add some padding for better visibility */
   /* width: 450px; /* Set the width of the session */
-  
+
   /* Set the height of the session */
   border: 2px solid #ffffff;
 
@@ -287,4 +300,3 @@ margin:auto;
   text-align: right;
 
 }
-
