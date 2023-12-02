@@ -83,7 +83,7 @@ async function main() {
     // the 'contractWithSigner' object allows us to call smart contract functions that
     // require us to send a transaction (like changing a number on the blockchain)
     const contractWithSigner = contract.connect(signer);
-};
+
 //......................................connection issues.....................
 // // Display the address of the signed-in wallet
 // const connectedWalletAddress = await signer.getAddress();
@@ -93,40 +93,6 @@ async function main() {
 // ADD CODE TO INTERACT WITH THE CONTRACT
 // Set Your Artist Button Click Event
 // Initialize the sentenceHistory array
-function generateUserSentence() {
-    const verbInput = document.getElementById("verbInput").value;
-    const nounInput = document.getElementById("nounInput").value;
-    const timeInput = document.getElementById("timeInput").value;
-
-    if (verbInput || nounInput || timeInput) {
-        const randomVerb = verbInput ? verbInput.split(",")[Math.floor(Math.random() * verbInput.split(",").length)].trim() : verbs[Math.floor(Math.random() * verbs.length)];
-        const randomNoun = nounInput ? nounInput.split(",")[Math.floor(Math.random() * nounInput.split(",").length)].trim() : nouns[Math.floor(Math.random() * nouns.length)];
-        const randomTime = timeInput ? timeInput.split(",")[Math.floor(Math.random() * timeInput.split(",").length)].trim() : times[Math.floor(Math.random() * times.length)];
-
-        const line1 = `The person who`;
-        const line2 = `${randomVerb} ${randomNoun}`;
-        const line3 = `${randomTime}`;
-        const line4 = `is an artist`;
-
-        const generatedSentence = `${line1}\n${line2}\n${line3}\n${line4}`;
-        // Display the generated sentence
-        const userSentence = document.getElementById("userSentence");
-        userSentence.textContent = generatedSentence;
-
-        // Update the sentence history list
-        const historyList = document.getElementById("history");
-        historyList.innerHTML = '';
-        sentenceHistory.forEach((sentence, index) => {
-            const listItem = document.createElement("li");
-            listItem.textContent = sentence;
-
-            historyList.appendChild(listItem);
-
-            historyList.scrollTop = historyList.scrollHeight;
-            console.log(historyList.scrollHeight);
-        });
-    }
-}
 
 //.............................contract interaction.....................
 const sentenceHistory = [];
@@ -191,7 +157,43 @@ document.getElementById("generateArtistButton").addEventListener("click", async 
         console.error("Error generating artist:", error);
     }
 });
+};
+//----------------------------------------------------------------
+const sentenceHistory = [];
+function generateUserSentence() {
+    const verbInput = document.getElementById("verbInput").value;
+    const nounInput = document.getElementById("nounInput").value;
+    const timeInput = document.getElementById("timeInput").value;
 
+    if (verbInput || nounInput || timeInput) {
+        const randomVerb = verbInput ? verbInput.split(",")[Math.floor(Math.random() * verbInput.split(",").length)].trim() : verbs[Math.floor(Math.random() * verbs.length)];
+        const randomNoun = nounInput ? nounInput.split(",")[Math.floor(Math.random() * nounInput.split(",").length)].trim() : nouns[Math.floor(Math.random() * nouns.length)];
+        const randomTime = timeInput ? timeInput.split(",")[Math.floor(Math.random() * timeInput.split(",").length)].trim() : times[Math.floor(Math.random() * times.length)];
+
+        const line1 = `The person who`;
+        const line2 = `${randomVerb} ${randomNoun}`;
+        const line3 = `${randomTime}`;
+        const line4 = `is an artist`;
+
+        const generatedSentence = `${line1}\n${line2}\n${line3}\n${line4}`;
+        // Display the generated sentence
+        const userSentence = document.getElementById("userSentence");
+        userSentence.textContent = generatedSentence;
+
+        // Update the sentence history list
+        const historyList = document.getElementById("history");
+        historyList.innerHTML = '';
+        sentenceHistory.forEach((sentence, index) => {
+            const listItem = document.createElement("li");
+            listItem.textContent = sentence;
+
+            historyList.appendChild(listItem);
+
+            historyList.scrollTop = historyList.scrollHeight;
+            console.log(historyList.scrollHeight);
+        });
+    }
+}
 //----------------------------------------------------------------
 // WebSocket handling (assuming this part remains the same)
 var ws = new WebSocket("ws://192.168.194.100:8765");
@@ -223,3 +225,31 @@ function sendMessage(content_content) {
     console.log("send out ws message");
     ws.send(content_content);
 }
+
+//----------typing effect----------------------
+
+const paragraph = document.getElementById('typing-text');
+const text = `"Artist Poem" is an Ethereum contract that enables individuals to define the term "Artist". Participants can contribute words they believe are associated with artists, and the contract will securely store their definitions on the Blockchain permanently. 
+  In theory, as a sufficient number of definitions are input by the audience, the repetition in the database will lead the artist manifesto to gradually converge toward a midpoint. However, before reaching that point, let's play and create first.`;
+let index = 0;
+
+function typeNextCharacter() {
+  if (!paragraph) return;
+  if (index < text.length) {
+    paragraph.appendChild(document.createTextNode(text.charAt(index)));
+    index++;
+    setTimeout(typeNextCharacter, 50); // Adjust the typing speed (in milliseconds)
+  } else {
+    // Display the entire text for 5 seconds
+    setTimeout(() => {
+      // Reset the index and clear the paragraph
+      index = 0;
+      paragraph.textContent = '';
+      // Restart typing
+      setTimeout(typeNextCharacter, 1000); // Optional delay before restarting (in milliseconds)
+    }, 5000); // 5000 milliseconds (5 seconds)
+  }
+}
+
+// Initial start
+setTimeout(typeNextCharacter, 1000);
