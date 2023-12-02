@@ -46,6 +46,24 @@ function sendMessage(content_content) {
   ws.send(content_content);
 }
 
+let verbs = ["creates", "steals", "plants", "circles", "plays", "draws", "chases", "watched", "holds", "micmics"];
+let nouns = ["circles", "triangles", "brushes", "plants", "human", "animals", "a bird", "soul", "the world", "an apple"];
+let times = [
+  "every moment",
+  "while walking",
+  "while eating",
+  "while thinking",
+  "everyday",
+  "every morning",
+  "every week",
+  "every month",
+  "every weekend",
+  "every night",
+  "every afternoon",
+  "in a corner",
+  "under the tree",
+  "while sitting in the grass"
+];
 
 const sentenceHistory = [];
 // Function to generate a sentence based on user input
@@ -102,6 +120,34 @@ function generateUserSentence() {
 
 }
 
+
+
+// Function to generate a random sentence
+function generateRandomSentence() {
+
+  const randomVerb = verbs[Math.floor(Math.random() * verbs.length)];
+  const randomNoun = nouns[Math.floor(Math.random() * nouns.length)];
+  const randomTime = times[Math.floor(Math.random() * times.length)];
+
+  const line1 = `The person who`;
+  const line2 = `${randomVerb} ${randomNoun}`;
+  const line3 = `${randomTime}`;
+  const line4 = `is an artist`;
+
+  const generatedSentence = `${line1}\n${line2}\n${line3}\n${line4}`;
+  // If the window is already opened, refresh its content; otherwise, open a new window
+
+  sendMessage(generatedSentence);
+
+}
+
+const displayButton = document.getElementById("display-button");
+// Add click event listener to the "Display Sentence" button
+if (displayButton) {
+  displayButton.addEventListener("click", generateUserSentence);
+  // Add click event listener to the "Generate Sentence" button
+  document.getElementById("generate-button").addEventListener("click", generateRandomSentence);
+}
 
 
 //----------typing effect----------------------

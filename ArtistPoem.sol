@@ -27,7 +27,6 @@ constructor() {
 }
 
 
-// event textStoreEvent(string newVerb, string newNoun, string newTime);
 
 function textInput (string memory _verb, string memory _noun, string memory _time) public {
    verbList.push(_verb);
@@ -57,6 +56,5 @@ function getRandomTime() public view returns(string memory){
 
 function getCurrentPoem() public view returns (string memory, string memory, string memory){
     return (verbList[verbList.length - 1], nounList[nounList.length - 1], timeList[timeList.length-1]);
-
 }
 }

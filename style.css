@@ -97,7 +97,9 @@ body {
   /* Adjust the line-height value as needed */
   border: 2px solid #ffffff;
 }
-
+.connect{
+font-size:clamp(20px, 1vw, 40px) ;
+}
 input {
   /* margin-top: 10px;
   margin-bottom: 10px; */
