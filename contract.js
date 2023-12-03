@@ -96,34 +96,43 @@ async function main() {
 
 //.....................................................................
 // WebSocket handling (assuming this part remains the same)
+let generatedWindow; // Variable to store the reference to the opened window
 var ws = new WebSocket("ws://192.168.194.100:8765");
+
 ws.onmessage = function (event) {
-    console.log("sentence received! do something here!");
-    console.log(event.data);
-    generatedSentence = event.data;
+  // trigger the message update
+  console.log("sentence received! do something here!");
+  console.log(event.data);
+  generatedSentence = event.data;
 
-    // Add the received sentence to the history
-    sentenceHistory.push(generatedSentence);
+  // Add the generated sentence to the history
+  sentenceHistory.push(generatedSentence);
 
-    // Update the sentence history list (similar to the logic above)
-    const historyList = document.getElementById("history");
-    if (historyList) {
-        historyList.innerHTML = '';
-    }
-    sentenceHistory.forEach((sentence, index) => {
-        const listItem = document.createElement("li");
-        listItem.textContent = sentence;
+  // Check if the current page is the third HTML page
+  const isThirdHTML = window.location.href.includes("list.html");
 
-        historyList.appendChild(listItem);
-    });
+  // Update the terminal with the latest sentence (on other pages)
+  if (!isThirdHTML) {
+    const terminal = document.getElementById("current");
+    terminal.textContent = generatedSentence;
+    terminal.style.color = "red"
+  }
 
-    historyList.scrollTop = historyList.scrollHeight;
+  // Update the sentence history list
+  const historyList = document.getElementById("history");
+  if (historyList) {
+    historyList.innerHTML = '';
+  }
+  sentenceHistory.forEach((sentence, index) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = sentence;
+
+    historyList.appendChild(listItem);
+  });
+
+  historyList.scrollTop = historyList.scrollHeight;
+  console.log(historyList.scrollHeight);
 };
-
-function sendMessage(content_content) {
-    console.log("send out ws message");
-    ws.send(content_content);
-}
 
 //--------------------display type-in--------------------------------------------
 // const sentenceHistory = [];
