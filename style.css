@@ -101,7 +101,6 @@ body {
 font-size:clamp(15px, 0.8vw, 40px) ;
 text-align: center;
 color: #fee2e2;
-
 }
 
 #connectButton{
@@ -128,7 +127,7 @@ input {
   font-size: 20px;
   /* Set a maximum width for the input fields */
   /*width: 435px; /* Make sure the width doesn't exceed the maximum width */
-  background-color:  #03b8e51b;
+  background-color:  rgba(255, 127, 127, 0.256);
   border: 1px solid #ffffff;
   color: #0088ff79;
   outline: none;
