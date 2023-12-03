@@ -125,6 +125,51 @@ function sendMessage(content_content) {
     ws.send(content_content);
 }
 
+//--------------------display type-in--------------------------------------------
+// const sentenceHistory = [];
+function generateUserSentence() {
+    const verbInput = document.getElementById("verbInput").value;
+    const nounInput = document.getElementById("nounInput").value;
+    const timeInput = document.getElementById("timeInput").value;
+
+    if (verbInput || nounInput || timeInput) {
+        const randomVerb = verbInput ? verbInput.split(",")[Math.floor(Math.random() * verbInput.split(",").length)].trim() : verbs[Math.floor(Math.random() * verbs.length)];
+        const randomNoun = nounInput ? nounInput.split(",")[Math.floor(Math.random() * nounInput.split(",").length)].trim() : nouns[Math.floor(Math.random() * nouns.length)];
+        const randomTime = timeInput ? timeInput.split(",")[Math.floor(Math.random() * timeInput.split(",").length)].trim() : times[Math.floor(Math.random() * times.length)];
+
+        const line1 = `The person who`;
+        const line2 = `${randomVerb} ${randomNoun}`;
+        const line3 = `${randomTime}`;
+        const line4 = `is an artist`;
+
+        const generatedSentence = `${line1}\n${line2}\n${line3}\n${line4}`;
+        // Display the generated sentence
+        const userSentence = document.getElementById("userSentence");
+        userSentence.textContent = generatedSentence;
+
+        // Update the sentence history list
+        const historyList = document.getElementById("history");
+        historyList.innerHTML = '';
+        sentenceHistory.forEach((sentence, index) => {
+            const listItem = document.createElement("li");
+            listItem.textContent = sentence;
+
+            historyList.appendChild(listItem);
+
+            historyList.scrollTop = historyList.scrollHeight;
+            console.log(historyList.scrollHeight);
+        });
+    }
+    sendMessage(generatedSentence);
+}
+const displayButton = document.getElementById("setArtistButton");
+// Add click event listener to the "Display Sentence" button
+if (displayButton) {
+  displayButton.addEventListener("click", generateUserSentence);
+  // Add click event listener to the "Generate Sentence" button
+//   document.getElementById("generate-button").addEventListener("click", generateRandomSentence);
+}
+
 //.............................contract interaction.....................
 const sentenceHistory = [];
 document.getElementById("setArtistButton").addEventListener("click", async () => {
@@ -139,6 +184,7 @@ document.getElementById("setArtistButton").addEventListener("click", async () =>
     } catch (error) {
         console.error("Error setting artist:", error);
     }
+
 });
 
 // Generate New Artist Button Click Event
@@ -193,43 +239,8 @@ document.getElementById("generateArtistButton").addEventListener("click", async 
     }
 });
 
-//----------------------------------------------------------------
-// const sentenceHistory = [];
-function generateUserSentence() {
-    const verbInput = document.getElementById("verbInput").value;
-    const nounInput = document.getElementById("nounInput").value;
-    const timeInput = document.getElementById("timeInput").value;
 
-    if (verbInput || nounInput || timeInput) {
-        const randomVerb = verbInput ? verbInput.split(",")[Math.floor(Math.random() * verbInput.split(",").length)].trim() : verbs[Math.floor(Math.random() * verbs.length)];
-        const randomNoun = nounInput ? nounInput.split(",")[Math.floor(Math.random() * nounInput.split(",").length)].trim() : nouns[Math.floor(Math.random() * nouns.length)];
-        const randomTime = timeInput ? timeInput.split(",")[Math.floor(Math.random() * timeInput.split(",").length)].trim() : times[Math.floor(Math.random() * times.length)];
 
-        const line1 = `The person who`;
-        const line2 = `${randomVerb} ${randomNoun}`;
-        const line3 = `${randomTime}`;
-        const line4 = `is an artist`;
-
-        const generatedSentence = `${line1}\n${line2}\n${line3}\n${line4}`;
-        // Display the generated sentence
-        const userSentence = document.getElementById("userSentence");
-        userSentence.textContent = generatedSentence;
-
-        // Update the sentence history list
-        const historyList = document.getElementById("history");
-        historyList.innerHTML = '';
-        sentenceHistory.forEach((sentence, index) => {
-            const listItem = document.createElement("li");
-            listItem.textContent = sentence;
-
-            historyList.appendChild(listItem);
-
-            historyList.scrollTop = historyList.scrollHeight;
-            console.log(historyList.scrollHeight);
-        });
-    }
-    sendMessage(generatedSentence);
-}
 };
 //----------------------------------------------------------------
 
