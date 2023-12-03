@@ -94,6 +94,37 @@ async function main() {
 // Set Your Artist Button Click Event
 // Initialize the sentenceHistory array
 
+//.....................................................................
+// WebSocket handling (assuming this part remains the same)
+var ws = new WebSocket("ws://192.168.194.100:8765");
+ws.onmessage = function (event) {
+    console.log("sentence received! do something here!");
+    console.log(event.data);
+    generatedSentence = event.data;
+
+    // Add the received sentence to the history
+    sentenceHistory.push(generatedSentence);
+
+    // Update the sentence history list (similar to the logic above)
+    const historyList = document.getElementById("history");
+    if (historyList) {
+        historyList.innerHTML = '';
+    }
+    sentenceHistory.forEach((sentence, index) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = sentence;
+
+        historyList.appendChild(listItem);
+    });
+
+    historyList.scrollTop = historyList.scrollHeight;
+};
+
+function sendMessage(content_content) {
+    console.log("send out ws message");
+    ws.send(content_content);
+}
+
 //.............................contract interaction.....................
 const sentenceHistory = [];
 document.getElementById("setArtistButton").addEventListener("click", async () => {
@@ -197,38 +228,11 @@ function generateUserSentence() {
             console.log(historyList.scrollHeight);
         });
     }
+    sendMessage(generatedSentence);
 }
-//----------------------------------------------------------------
-// WebSocket handling (assuming this part remains the same)
-var ws = new WebSocket("ws://192.168.194.100:8765");
-
-ws.onmessage = function (event) {
-    console.log("sentence received! do something here!");
-    console.log(event.data);
-    generatedSentence = event.data;
-
-    // Add the received sentence to the history
-    sentenceHistory.push(generatedSentence);
-
-    // Update the sentence history list (similar to the logic above)
-    const historyList = document.getElementById("history");
-    if (historyList) {
-        historyList.innerHTML = '';
-    }
-    sentenceHistory.forEach((sentence, index) => {
-        const listItem = document.createElement("li");
-        listItem.textContent = sentence;
-
-        historyList.appendChild(listItem);
-    });
-
-    historyList.scrollTop = historyList.scrollHeight;
 };
+//----------------------------------------------------------------
 
-function sendMessage(content_content) {
-    console.log("send out ws message");
-    ws.send(content_content);
-}
 
 //----------typing effect----------------------
 
@@ -258,4 +262,3 @@ function typeNextCharacter() {
 // Initial start
 setTimeout(typeNextCharacter, 1000);
 
-};
