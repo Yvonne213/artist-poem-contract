@@ -84,16 +84,6 @@ async function main() {
     // require us to send a transaction (like changing a number on the blockchain)
     const contractWithSigner = contract.connect(signer);
 
-//......................................connection issues.....................
-// // Display the address of the signed-in wallet
-// const connectedWalletAddress = await signer.getAddress();
-// //connectedWallet.textContent = connectedWalletAddress;
-// console.log(`Connected Wallet: ${connectedWalletAddress}`);
-
-// ADD CODE TO INTERACT WITH THE CONTRACT
-// Set Your Artist Button Click Event
-// Initialize the sentenceHistory array
-
 //.....................................................................
 // WebSocket handling (assuming this part remains the same)
 let generatedWindow; // Variable to store the reference to the opened window
