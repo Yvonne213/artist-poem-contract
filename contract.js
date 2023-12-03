@@ -128,7 +128,7 @@ document.getElementById("generateArtistButton").addEventListener("click", async 
         const artistDescription = `${line1}\n${line2}\n${line3}\n${line4}`;
         // Display the generated artist in your HTML
         console.log(artistDescription);
-        console.log(document.getElementById("current"));
+        console.log(document.getElementById("current")); // Error here 
         document.getElementById("current").innerText = artistDescription;
     
   
