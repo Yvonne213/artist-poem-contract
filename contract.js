@@ -127,7 +127,7 @@ document.getElementById("generateArtistButton").addEventListener("click", async 
         // Concatenate the lines with line breaks
         const artistDescription = `${line1}\n${line2}\n${line3}\n${line4}`;
         // Display the generated artist in your HTML
-        document.getElementById("current").innerText = artistDescription;
+        document.getElementById("current").textContent = artistDescription;
         // Clear the input fields
         document.getElementById("verbInput").value = '';
         document.getElementById("nounInput").value = '';
