@@ -127,7 +127,11 @@ document.getElementById("generateArtistButton").addEventListener("click", async 
         // Concatenate the lines with line breaks
         const artistDescription = `${line1}\n${line2}\n${line3}\n${line4}`;
         // Display the generated artist in your HTML
-        document.getElementById("current").textContent = artistDescription;
+        console.log(artistDescription);
+        console.log(document.getElementById("current"));
+        document.getElementById("current").innerText = artistDescription;
+    
+  
         // Clear the input fields
         document.getElementById("verbInput").value = '';
         document.getElementById("nounInput").value = '';
@@ -157,9 +161,9 @@ document.getElementById("generateArtistButton").addEventListener("click", async 
         console.error("Error generating artist:", error);
     }
 });
-};
+
 //----------------------------------------------------------------
-const sentenceHistory = [];
+// const sentenceHistory = [];
 function generateUserSentence() {
     const verbInput = document.getElementById("verbInput").value;
     const nounInput = document.getElementById("nounInput").value;
@@ -253,3 +257,5 @@ function typeNextCharacter() {
 
 // Initial start
 setTimeout(typeNextCharacter, 1000);
+
+};
