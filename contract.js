@@ -134,6 +134,10 @@ ws.onmessage = function (event) {
   console.log(historyList.scrollHeight);
 };
 
+function sendMessage(content_content) {
+    console.log("send out ws message");
+    ws.send(content_content);
+  }
 //--------------------display type-in--------------------------------------------
 const sentenceHistory = [];
 function generateUserSentence() {
@@ -173,6 +177,7 @@ function generateUserSentence() {
     document.getElementById("nounInput").value = '';
     document.getElementById("timeInput").value = '';
     }
+    
     sendMessage(generatedSentence);
 }
 
