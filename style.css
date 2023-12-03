@@ -61,7 +61,7 @@ body {
 .marquees {
   background-color: #e3878727;
   border: 2px solid #ffffff;
-  padding: 20px;
+  padding: 15px 20px;
   font-size: clamp(20px, 1vw, 30px);
 }
 
@@ -250,7 +250,7 @@ h1 {
   margin: auto;
   /* Center the div horizontally */
   white-space: pre-wrap;
-  max-height: 37vh;
+  max-height: 38vh;
   /* max-width: 800px; */
   overflow-y: auto;
   /* Enable vertical scrolling when content exceeds the height */
