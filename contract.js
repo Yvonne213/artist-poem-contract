@@ -66,7 +66,7 @@ async function main() {
     // AT THIS POINT, THE USER SHOULD BE SUCCESSFULLY CONNECTED TO THE DAPP
 
     // Update the page to show the user is connected
-    connectionStatus.textContent = "🟢 Connected";
+    connectionStatus.textContent = "Connected ✔ ";
 
     connectButton.setAttribute("disabled", "true");
     //...............up is connection issues......................................//
@@ -185,7 +185,7 @@ if (displayButton) {
 }
 
 //...........................contract interaction.....................
-//...........................set user input data.....................
+//.....................set user input data into blockchain.....................
 
 // document.getElementById("setArtistButton").addEventListener("click", async () => {
 //     const verb = document.getElementById("verbInput").value;

@@ -85,7 +85,7 @@ body {
   text-align: left;
   font-size: clamp(20px, 1vw, 40px);
   background-color: #e3757527;
-  padding: 40px 20px;
+  padding: 25px 20px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -98,7 +98,28 @@ body {
   border: 2px solid #ffffff;
 }
 .connect{
-font-size:clamp(20px, 1vw, 40px) ;
+font-size:clamp(15px, 0.8vw, 40px) ;
+text-align: center;
+color: #fee2e2;
+
+}
+
+#connectButton{
+  margin-bottom: 1vh;
+  background-color: #ffffff2d;
+  color: rgb(231, 110, 110);
+  /* border: 1px solid rgba(255, 255, 255, 0.929); */
+  border:none;
+  font-size: 15px;
+  padding:10px ;
+  font-family: "magistral", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  border-radius: 5px;
+}
+#connectButton:hover {
+  background-color: #0088ff31;
+  box-shadow: 0 8px 16px 0 rgba(124, 242, 255, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
 input {
   /* margin-top: 10px;
@@ -107,7 +128,7 @@ input {
   font-size: 20px;
   /* Set a maximum width for the input fields */
   /*width: 435px; /* Make sure the width doesn't exceed the maximum width */
-  background-color: rgba(255, 127, 127, 0.256);
+  background-color:  #03b8e51b;
   border: 1px solid #ffffff;
   color: #0088ff79;
   outline: none;
@@ -128,7 +149,7 @@ input:hover {
 /********************/
 .button1,
 .button2 {
-
+ border:none;
   padding: 20px;
   background-color: #e01e1e2d;
   color: rgb(231, 110, 110);
