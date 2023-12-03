@@ -184,22 +184,23 @@ if (displayButton) {
 //   document.getElementById("generateArtistButton").addEventListener("click", generateRandomSentence);
 }
 
-//.............................contract interaction.....................
+//...........................contract interaction.....................
+//...........................set user input data.....................
 
-document.getElementById("setArtistButton").addEventListener("click", async () => {
-    const verb = document.getElementById("verbInput").value;
-    const noun = document.getElementById("nounInput").value;
-    const time = document.getElementById("timeInput").value;
+// document.getElementById("setArtistButton").addEventListener("click", async () => {
+//     const verb = document.getElementById("verbInput").value;
+//     const noun = document.getElementById("nounInput").value;
+//     const time = document.getElementById("timeInput").value;
 
-    try {
-        // Call the textInput function in your smart contract
-        await contractWithSigner.textInput(verb, noun, time);
-        console.log("Artist set successfully!");
-    } catch (error) {
-        console.error("Error setting artist:", error);
-    }
+//     try {
+//         // Call the textInput function in your smart contract
+//         await contractWithSigner.textInput(verb, noun, time);
+//         console.log("Artist set successfully!");
+//     } catch (error) {
+//         console.error("Error setting artist:", error);
+//     }
 
-});
+// });
 
 // Generate New Artist Button Click Event
 document.getElementById("generateArtistButton").addEventListener("click", async () => {
