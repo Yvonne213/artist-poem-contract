@@ -177,7 +177,6 @@ function generateUserSentence() {
     document.getElementById("nounInput").value = '';
     document.getElementById("timeInput").value = '';
     }
-    
     sendMessage(generatedSentence);
 }
 
