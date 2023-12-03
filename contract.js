@@ -175,6 +175,7 @@ function generateUserSentence() {
     }
     sendMessage(generatedSentence);
 }
+
 const displayButton = document.getElementById("setArtistButton");
 // Add click event listener to the "Display Sentence" button
 if (displayButton) {
@@ -220,13 +221,7 @@ document.getElementById("generateArtistButton").addEventListener("click", async 
         console.log(artistDescription);
         console.log(document.getElementById("current")); // Error here 
         document.getElementById("current").innerText = artistDescription;
-    
-  
-        // Clear the input fields
-        document.getElementById("verbInput").value = '';
-        document.getElementById("nounInput").value = '';
-        document.getElementById("timeInput").value = '';
-
+        
         sendMessage(artistDescription);
 
         //----------------
