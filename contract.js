@@ -135,7 +135,7 @@ ws.onmessage = function (event) {
 };
 
 //--------------------display type-in--------------------------------------------
-// const sentenceHistory = [];
+const sentenceHistory = [];
 function generateUserSentence() {
     const verbInput = document.getElementById("verbInput").value;
     const nounInput = document.getElementById("nounInput").value;
@@ -168,6 +168,10 @@ function generateUserSentence() {
             historyList.scrollTop = historyList.scrollHeight;
             console.log(historyList.scrollHeight);
         });
+        // Clear the input fields
+    document.getElementById("verbInput").value = '';
+    document.getElementById("nounInput").value = '';
+    document.getElementById("timeInput").value = '';
     }
     sendMessage(generatedSentence);
 }
@@ -176,11 +180,11 @@ const displayButton = document.getElementById("setArtistButton");
 if (displayButton) {
   displayButton.addEventListener("click", generateUserSentence);
   // Add click event listener to the "Generate Sentence" button
-//   document.getElementById("generate-button").addEventListener("click", generateRandomSentence);
+//   document.getElementById("generateArtistButton").addEventListener("click", generateRandomSentence);
 }
 
 //.............................contract interaction.....................
-const sentenceHistory = [];
+
 document.getElementById("setArtistButton").addEventListener("click", async () => {
     const verb = document.getElementById("verbInput").value;
     const noun = document.getElementById("nounInput").value;
