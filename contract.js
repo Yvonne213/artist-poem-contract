@@ -146,39 +146,35 @@ function generateUserSentence() {
     const timeInput = document.getElementById("timeInput").value;
 
     if (verbInput || nounInput || timeInput) {
-        const randomVerb = verbInput ? verbInput.split(",")[Math.floor(Math.random() * verbInput.split(",").length)].trim() : verbs[Math.floor(Math.random() * verbs.length)];
-        const randomNoun = nounInput ? nounInput.split(",")[Math.floor(Math.random() * nounInput.split(",").length)].trim() : nouns[Math.floor(Math.random() * nouns.length)];
-        const randomTime = timeInput ? timeInput.split(",")[Math.floor(Math.random() * timeInput.split(",").length)].trim() : times[Math.floor(Math.random() * times.length)];
-
         const line1 = `The person who`;
-        const line2 = `${randomVerb} ${randomNoun}`;
-        const line3 = `${randomTime}`;
+        const line2 = `${verbInput} ${nounInput}`;
+        const line3 = `${timeInput}`;
         const line4 = `is an artist`;
 
         const generatedSentence = `${line1}\n${line2}\n${line3}\n${line4}`;
+        
         // Display the generated sentence
         const userSentence = document.getElementById("userSentence");
         userSentence.textContent = generatedSentence;
 
         // Update the sentence history list
         const historyList = document.getElementById("history");
-        historyList.innerHTML = '';
-        sentenceHistory.forEach((sentence, index) => {
-            const listItem = document.createElement("li");
-            listItem.textContent = sentence;
+        const listItem = document.createElement("li");
+        listItem.textContent = generatedSentence;
+        historyList.appendChild(listItem);
 
-            historyList.appendChild(listItem);
+        historyList.scrollTop = historyList.scrollHeight;
 
-            historyList.scrollTop = historyList.scrollHeight;
-            console.log(historyList.scrollHeight);
-        });
         // Clear the input fields
-    document.getElementById("verbInput").value = '';
-    document.getElementById("nounInput").value = '';
-    document.getElementById("timeInput").value = '';
+        document.getElementById("verbInput").value = '';
+        document.getElementById("nounInput").value = '';
+        document.getElementById("timeInput").value = '';
+
+        // Add the generated sentence to the history
+        sentenceHistory.push(generatedSentence);
     }
-    sendMessage(generatedSentence);
 }
+
 
 const displayButton = document.getElementById("setArtistButton");
 // Add click event listener to the "Display Sentence" button
