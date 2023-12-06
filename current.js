@@ -13,7 +13,7 @@ ws.onmessage = function (event) {
   const isThirdHTML = window.location.href.includes("list.html");
   // Update the terminal with the latest sentence (on other pages)
   if (!isThirdHTML) {
-    const terminal = document.getElementById("terminal");
+    const terminal = document.getElementById("current");
     terminal.textContent = generatedSentence;
     terminal.style.color = "red"
   }

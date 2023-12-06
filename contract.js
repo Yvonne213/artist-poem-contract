@@ -84,140 +84,29 @@ async function main() {
     // require us to send a transaction (like changing a number on the blockchain)
     const contractWithSigner = contract.connect(signer);
 
-//.....................................................................
-// WebSocket handling (assuming this part remains the same)
-let generatedWindow; // Variable to store the reference to the opened window
-var ws = new WebSocket("ws://192.168.194.100:8765");
+    //.....................................................................
+    // WebSocket handling (assuming this part remains the same)
+    let generatedWindow; // Variable to store the reference to the opened window
+    var ws = new WebSocket("ws://192.168.194.100:8765");
 
-ws.onmessage = function (event) {
-  // trigger the message update
-  console.log("sentence received! do something here!");
-  console.log(event.data);
-  generatedSentence = event.data;
-
-  // Add the generated sentence to the history
-  sentenceHistory.push(generatedSentence);
-
-  // Check if the current page is the third HTML page
-  const isThirdHTML = window.location.href.includes("list.html");
-
-  // Update the terminal with the latest sentence (on other pages)
-  if (!isThirdHTML) {
-    const terminal = document.getElementById("current");
-    terminal.textContent = generatedSentence;
-    terminal.style.color = "red"
-  }
-
-  // Update the sentence history list
-  const historyList = document.getElementById("history");
-  if (historyList) {
-    historyList.innerHTML = '';
-  }
-  sentenceHistory.forEach((sentence, index) => {
-    const listItem = document.createElement("li");
-    listItem.textContent = sentence;
-
-    historyList.appendChild(listItem);
-  });
-
-  historyList.scrollTop = historyList.scrollHeight;
-  console.log(historyList.scrollHeight);
-};
-
-function sendMessage(content_content) {
-    console.log("send out ws message");
-    ws.send(content_content);
-  }
-//--------------------display type-in--------------------------------------------
-const sentenceHistory = [];
-function generateUserSentence() {
-    const verbInput = document.getElementById("verbInput").value;
-    const nounInput = document.getElementById("nounInput").value;
-    const timeInput = document.getElementById("timeInput").value;
-
-    if (verbInput || nounInput || timeInput) {
-        const line1 = `The person who`;
-        const line2 = `${verbInput} ${nounInput}`;
-        const line3 = `${timeInput}`;
-        const line4 = `is an artist`;
-
-        const generatedSentence = `${line1}\n${line2}\n${line3}\n${line4}`;
-        
-        // Display the generated sentence
-        const userSentence = document.getElementById("userSentence");
-        userSentence.textContent = generatedSentence;
-
-        // Update the sentence history list
-        const historyList = document.getElementById("history");
-        const listItem = document.createElement("li");
-        listItem.textContent = generatedSentence;
-        historyList.appendChild(listItem);
-
-        historyList.scrollTop = historyList.scrollHeight;
-
-        // Clear the input fields
-        document.getElementById("verbInput").value = '';
-        document.getElementById("nounInput").value = '';
-        document.getElementById("timeInput").value = '';
+    ws.onmessage = function (event) {
+        // trigger the message update
+        console.log("sentence received! do something here!");
+        console.log(event.data);
+        generatedSentence = event.data;
 
         // Add the generated sentence to the history
         sentenceHistory.push(generatedSentence);
-    }
-}
 
+        // Check if the current page is the third HTML page
+        const isThirdHTML = window.location.href.includes("list.html");
 
-const displayButton = document.getElementById("setArtistButton");
-// Add click event listener to the "Display Sentence" button
-if (displayButton) {
-  displayButton.addEventListener("click", generateUserSentence);
-  // Add click event listener to the "Generate Sentence" button
-//   document.getElementById("generateArtistButton").addEventListener("click", generateRandomSentence);
-}
-
-//...........................contract interaction.....................
-//.....................set user input data into blockchain.....................
-
-// document.getElementById("setArtistButton").addEventListener("click", async () => {
-//     const verb = document.getElementById("verbInput").value;
-//     const noun = document.getElementById("nounInput").value;
-//     const time = document.getElementById("timeInput").value;
-
-//     try {
-//         // Call the textInput function in your smart contract
-//         await contractWithSigner.textInput(verb, noun, time);
-//         console.log("Artist set successfully!");
-//     } catch (error) {
-//         console.error("Error setting artist:", error);
-//     }
-
-// });
-
-// Generate New Artist Button Click Event
-document.getElementById("generateArtistButton").addEventListener("click", async () => {
-    try {
-        // Call the getRandomVerb, getRandomNoun, and getRandomTime functions in your smart contract
-        const randomVerb = await contractWithSigner.getRandomVerb();
-        const randomNoun = await contractWithSigner.getRandomNoun();
-        const randomTime = await contractWithSigner.getRandomTime();
-
-        // Display the generated artist in your HTML (adjust as needed)
-        //   document.getElementById("current").innerText = `The person who ${randomVerb} ${randomNoun} ${randomTime} is an artist.`;
-        const line1 = `The person who`;
-        const line2 = `${randomVerb} ${randomNoun}`;
-        const line3 = `${randomTime}`;
-        const line4 = `is an artist`;
-        // Concatenate the lines with line breaks
-        const artistDescription = `${line1}\n${line2}\n${line3}\n${line4}`;
-        // Display the generated artist in your HTML
-        console.log(artistDescription);
-        console.log(document.getElementById("current")); // Error here 
-        document.getElementById("current").innerText = artistDescription;
-        
-        sendMessage(artistDescription);
-
-        //----------------
-        // Add the generated artist description to the history list
-        sentenceHistory.push(artistDescription);
+        // Update the terminal with the latest sentence (on other pages)
+        if (!isThirdHTML) {
+            const terminal = document.getElementById("current");
+            terminal.textContent = generatedSentence;
+            terminal.style.color = "red"
+        }
 
         // Update the sentence history list
         const historyList = document.getElementById("history");
@@ -232,11 +121,122 @@ document.getElementById("generateArtistButton").addEventListener("click", async 
         });
 
         historyList.scrollTop = historyList.scrollHeight;
+        console.log(historyList.scrollHeight);
+    };
 
-    } catch (error) {
-        console.error("Error generating artist:", error);
+    function sendMessage(content_content) {
+        console.log("send out ws message");
+        ws.send(content_content);
     }
-});
+    //--------------------display type-in--------------------------------------------
+    const sentenceHistory = [];
+    function generateUserSentence() {
+        const verbInput = document.getElementById("verbInput").value;
+        const nounInput = document.getElementById("nounInput").value;
+        const timeInput = document.getElementById("timeInput").value;
+
+        if (verbInput || nounInput || timeInput) {
+            const line1 = `The person who`;
+            const line2 = `${verbInput} ${nounInput}`;
+            const line3 = `${timeInput}`;
+            const line4 = `is an artist`;
+
+            const generatedSentence = `${line1}\n${line2}\n${line3}\n${line4}`;
+
+            // Display the generated sentence
+            const userSentence = document.getElementById("userSentence");
+            userSentence.textContent = generatedSentence;
+
+            // Update the sentence history list
+            const historyList = document.getElementById("history");
+            const listItem = document.createElement("li");
+            listItem.textContent = generatedSentence;
+            historyList.appendChild(listItem);
+
+            historyList.scrollTop = historyList.scrollHeight;
+
+            // Clear the input fields
+            document.getElementById("verbInput").value = '';
+            document.getElementById("nounInput").value = '';
+            document.getElementById("timeInput").value = '';
+
+            // Add the generated sentence to the history
+            sentenceHistory.push(generatedSentence);
+        }
+    }
+
+
+    const displayButton = document.getElementById("setArtistButton");
+    // Add click event listener to the "Display Sentence" button
+    if (displayButton) {
+        displayButton.addEventListener("click", generateUserSentence);
+        // Add click event listener to the "Generate Sentence" button
+        //   document.getElementById("generateArtistButton").addEventListener("click", generateRandomSentence);
+    }
+
+    //...........................contract interaction.....................
+    //.....................set user input data into blockchain.....................
+
+    document.getElementById("setArtistButton").addEventListener("click", async () => {
+        const verb = document.getElementById("verbInput").value;
+        const noun = document.getElementById("nounInput").value;
+        const time = document.getElementById("timeInput").value;
+
+        try {
+            // Call the textInput function in your smart contract
+            await contractWithSigner.textInput(verb, noun, time);
+            console.log("Artist set successfully!");
+        } catch (error) {
+            console.error("Error setting artist:", error);
+        }
+
+    });
+
+    // Generate New Artist Button Click Event
+    document.getElementById("generateArtistButton").addEventListener("click", async () => {
+        // try {
+            // Call the getRandomVerb, getRandomNoun, and getRandomTime functions in your smart contract
+            const randomVerb = await contractWithSigner.getRandomVerb();
+            const randomNoun = await contractWithSigner.getRandomNoun();
+            const randomTime = await contractWithSigner.getRandomTime();
+
+            // Display the generated artist in your HTML (adjust as needed)
+            //   document.getElementById("current").innerText = `The person who ${randomVerb} ${randomNoun} ${randomTime} is an artist.`;
+            const line1 = `The person who`;
+            const line2 = `${randomVerb} ${randomNoun}`;
+            const line3 = `${randomTime}`;
+            const line4 = `is an artist`;
+            // Concatenate the lines with line breaks
+            const artistDescription = `${line1}\n${line2}\n${line3}\n${line4}`;
+            // Display the generated artist in your HTML
+            console.log(artistDescription);
+            console.log(document.getElementById("userSentence")); // Error here 
+            // document.getElementById("userSentence").innerText = artistDescription;
+
+            sendMessage(artistDescription);
+
+            //----------------
+            // Add the generated artist description to the history list
+            sentenceHistory.push(artistDescription);
+
+            // Update the sentence history list
+            const historyList = document.getElementById("history");
+            if (historyList) {
+                historyList.innerHTML = '';
+            }
+            sentenceHistory.forEach((sentence, index) => {
+                const listItem = document.createElement("li");
+                listItem.textContent = sentence;
+
+                // historyList.appendChild(listItem);
+            });
+
+            historyList.scrollTop = historyList.scrollHeight;
+
+        // } catch (error) {
+        //     console.error("Error generating artist:", error);
+        // }
+    });
 
 
 
@@ -246,29 +246,29 @@ document.getElementById("generateArtistButton").addEventListener("click", async 
 
 //----------typing effect----------------------
 
-const paragraph = document.getElementById('typing-text');
-const text = `"Artist Poem" is an Ethereum contract that enables individuals to define the term "Artist". Participants can contribute words they believe are associated with artists, and the contract will securely store their definitions on the Blockchain permanently. 
-  In theory, as a sufficient number of definitions are input by the audience, the repetition in the database will lead the artist manifesto to gradually converge toward a midpoint. However, before reaching that point, let's play and create first.`;
-let index = 0;
+// const paragraph = document.getElementById('typing-text');
+// const text = `"Artist Poem" is an Ethereum contract that enables individuals to define the term "Artist". Participants can contribute words they believe are associated with artists, and the contract will securely store their definitions on the Blockchain permanently.
+//   In theory, as a sufficient number of definitions are input by the audience, the repetition in the database will lead the artist manifesto to gradually converge toward a midpoint. However, before reaching that point, let's play and create first.`;
+// let index = 0;
 
-function typeNextCharacter() {
-  if (!paragraph) return;
-  if (index < text.length) {
-    paragraph.appendChild(document.createTextNode(text.charAt(index)));
-    index++;
-    setTimeout(typeNextCharacter, 50); // Adjust the typing speed (in milliseconds)
-  } else {
-    // Display the entire text for 5 seconds
-    setTimeout(() => {
-      // Reset the index and clear the paragraph
-      index = 0;
-      paragraph.textContent = '';
-      // Restart typing
-      setTimeout(typeNextCharacter, 1000); // Optional delay before restarting (in milliseconds)
-    }, 5000); // 5000 milliseconds (5 seconds)
-  }
-}
+// function typeNextCharacter() {
+//   if (!paragraph) return;
+//   if (index < text.length) {
+//     paragraph.appendChild(document.createTextNode(text.charAt(index)));
+//     index++;
+//     setTimeout(typeNextCharacter, 50); // Adjust the typing speed (in milliseconds)
+//   } else {
+//     // Display the entire text for 5 seconds
+//     setTimeout(() => {
+//       // Reset the index and clear the paragraph
+//       index = 0;
+//       paragraph.textContent = '';
+//       // Restart typing
+//       setTimeout(typeNextCharacter, 1000); // Optional delay before restarting (in milliseconds)
+//     }, 5000); // 5000 milliseconds (5 seconds)
+//   }
+// }
 
-// Initial start
-setTimeout(typeNextCharacter, 1000);
+// // Initial start
+// setTimeout(typeNextCharacter, 1000);
 
