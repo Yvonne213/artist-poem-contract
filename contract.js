@@ -135,6 +135,7 @@ async function main() {
         const nounInput = document.getElementById("nounInput").value;
         const timeInput = document.getElementById("timeInput").value;
 
+        
         if (verbInput || nounInput || timeInput) {
             const line1 = `The person who`;
             const line2 = `${verbInput} ${nounInput}`;
@@ -170,8 +171,6 @@ async function main() {
     // Add click event listener to the "Display Sentence" button
     if (displayButton) {
         displayButton.addEventListener("click", generateUserSentence);
-        // Add click event listener to the "Generate Sentence" button
-        //   document.getElementById("generateArtistButton").addEventListener("click", generateRandomSentence);
     }
 
     //...........................contract interaction.....................
