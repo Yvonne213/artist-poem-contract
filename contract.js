@@ -222,7 +222,7 @@ async function main() {
             // Update the sentence history list
             const historyList = document.getElementById("history");
             if (historyList) {
-                historyList.innerHTML = '';
+                historyList.innerHTML = innerhtml.append ;
             }
             sentenceHistory.forEach((sentence, index) => {
                 const listItem = document.createElement("li");
