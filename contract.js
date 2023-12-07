@@ -85,7 +85,7 @@ async function main() {
     const contractWithSigner = contract.connect(signer);
 
     //.....................................................................
-    // WebSocket handling (assuming this part remains the same)
+    // WebSocket handling 
     let generatedWindow; // Variable to store the reference to the opened window
     var ws = new WebSocket("ws://192.168.194.100:8765");
 
@@ -135,7 +135,7 @@ async function main() {
         const nounInput = document.getElementById("nounInput").value;
         const timeInput = document.getElementById("timeInput").value;
 
-        
+
         if (verbInput || nounInput || timeInput) {
             const line1 = `The person who`;
             const line2 = `${verbInput} ${nounInput}`;
@@ -167,11 +167,11 @@ async function main() {
     }
 
 
-    const displayButton = document.getElementById("setArtistButton");
-    // Add click event listener to the "Display Sentence" button
-    if (displayButton) {
-        displayButton.addEventListener("click", generateUserSentence);
-    }
+    // const displayButton = document.getElementById("setArtistButton");
+    // // Add click event listener to the "Display Sentence" button
+    // if (displayButton) {
+    //     displayButton.addEventListener("click", generateUserSentence);
+    // }
 
     //...........................contract interaction.....................
     //.....................set user input data into blockchain.....................
@@ -185,6 +185,7 @@ async function main() {
             // Call the textInput function in your smart contract
             await contractWithSigner.textInput(verb, noun, time);
             console.log("Artist set successfully!");
+            generateUserSentence();
         } catch (error) {
             console.error("Error setting artist:", error);
         }
