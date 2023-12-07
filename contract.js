@@ -105,7 +105,7 @@ async function main() {
         if (!isThirdHTML) {
             const terminal = document.getElementById("current");
             terminal.textContent = generatedSentence;
-            terminal.style.color = "red"
+            
         }
 
         // Update the sentence history list
