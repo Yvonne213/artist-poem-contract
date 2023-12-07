@@ -103,7 +103,7 @@ async function main() {
 
         // Update the terminal with the latest sentence (on other pages)
         if (!isThirdHTML) {
-            const terminal = document.getElementById("current");
+            const terminal = document.getElementById("userSentence");
             terminal.textContent = generatedSentence;
             
         }
@@ -147,7 +147,7 @@ async function main() {
             // Display the generated sentence
             const userSentence = document.getElementById("userSentence");
             userSentence.textContent = generatedSentence;
-
+            sendMessage(generatedSentence);
             // Update the sentence history list
             const historyList = document.getElementById("history");
             const listItem = document.createElement("li");
@@ -186,6 +186,7 @@ async function main() {
             await contractWithSigner.textInput(verb, noun, time);
             console.log("Artist set successfully!");
             generateUserSentence();
+            
         } catch (error) {
             console.error("Error setting artist:", error);
         }
