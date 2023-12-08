@@ -247,29 +247,29 @@ async function main() {
 
 //----------typing effect----------------------
 
-// const paragraph = document.getElementById('typing-text');
-// const text = `"Artist Poem" is an Ethereum contract that enables individuals to define the term "Artist". Participants can contribute words they believe are associated with artists, and the contract will securely store their definitions on the Blockchain permanently.
-//   In theory, as a sufficient number of definitions are input by the audience, the repetition in the database will lead the artist manifesto to gradually converge toward a midpoint. However, before reaching that point, let's play and create first.`;
-// let index = 0;
+const paragraph = document.getElementById('typing-text');
+const text = `"Artist Poem" is an Ethereum contract that enables individuals to define the term "Artist". Participants can contribute words they believe are associated with artists, and the contract will securely store their definitions on the Blockchain permanently.
+  In theory, as a sufficient number of definitions are input by the audience, the repetition in the database will lead the artist manifesto to gradually converge toward a midpoint. However, before reaching that point, let's play and create first.`;
+let index = 0;
 
-// function typeNextCharacter() {
-//   if (!paragraph) return;
-//   if (index < text.length) {
-//     paragraph.appendChild(document.createTextNode(text.charAt(index)));
-//     index++;
-//     setTimeout(typeNextCharacter, 50); // Adjust the typing speed (in milliseconds)
-//   } else {
-//     // Display the entire text for 5 seconds
-//     setTimeout(() => {
-//       // Reset the index and clear the paragraph
-//       index = 0;
-//       paragraph.textContent = '';
-//       // Restart typing
-//       setTimeout(typeNextCharacter, 1000); // Optional delay before restarting (in milliseconds)
-//     }, 5000); // 5000 milliseconds (5 seconds)
-//   }
-// }
+function typeNextCharacter() {
+  if (!paragraph) return;
+  if (index < text.length) {
+    paragraph.appendChild(document.createTextNode(text.charAt(index)));
+    index++;
+    setTimeout(typeNextCharacter, 50); // Adjust the typing speed (in milliseconds)
+  } else {
+    // Display the entire text for 5 seconds
+    setTimeout(() => {
+      // Reset the index and clear the paragraph
+      index = 0;
+      paragraph.textContent = '';
+      // Restart typing
+      setTimeout(typeNextCharacter, 1000); // Optional delay before restarting (in milliseconds)
+    }, 5000); // 5000 milliseconds (5 seconds)
+  }
+}
 
-// // Initial start
-// setTimeout(typeNextCharacter, 1000);
+// Initial start
+setTimeout(typeNextCharacter, 1000);
 
