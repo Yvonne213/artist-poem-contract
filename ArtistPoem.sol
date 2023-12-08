@@ -2,7 +2,7 @@
 pragma solidity ^0.8.17;
 
 
-contract ArtistPoem{
+contract artistpoem{
 string[] public verbList;
 string[] public nounList;
 string[] public timeList;
