@@ -37,9 +37,9 @@ body {
   align-items: center;
 
   border: clamp(0.1vw, 0.2vw, 0.6vw) solid #f7c6c6;
-  width: 60vw;
+  width: 62vw;
   /*!!!based on the screen size to adjust*/
-  height: 87vh;
+  height: 90vh;
 
   overflow: auto;
   overflow: hidden;
@@ -61,7 +61,7 @@ body {
   /* IE and Edge */
   scrollbar-width: none;
   /* Firefox */
-  font-size: clamp(0.5vw, 3vw, 100vw);
+  font-size: clamp(0.5vw, 4vw, 100vw);
   /*!!!based on the screen size to adjust*/
   list-style: none;
   /* Remove the default list-style */
@@ -78,7 +78,7 @@ body {
   width: 100%;
   /* border-bottom: 1px dotted black; */
   border-style: hidden;
-  padding: clamp(2vw, 4vw, 40vw) 0;
+  padding: clamp(2vw, 3vw, 40vw) 0;
 }
 
 /* Media Query for smaller screens */
