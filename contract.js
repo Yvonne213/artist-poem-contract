@@ -228,12 +228,13 @@ async function main() {
             sentenceHistory.forEach((sentence, index) => {
                 const listItem = document.createElement("li");
                 listItem.textContent = sentence;
-
-                // historyList.appendChild(listItem);
+// add 2024.2.11
+                historyList.appendChild(listItem);
             });
 
             historyList.scrollTop = historyList.scrollHeight;
-
+            //add 2024.2.11
+            const sentenceHistory = [];
         // } catch (error) {
         //     console.error("Error generating artist:", error);
         // }
