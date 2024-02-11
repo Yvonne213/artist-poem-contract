@@ -23,38 +23,40 @@
   <div class="bg"></div>
   <div class="container">
     <div class="session1">
+      
       <div class="marquees">
-        <marquee class="moving1" behavior="scroll" direction="right">Who do you think is an artist？Who can be an
-          artist？Who might be an artist？</marquee>
-        <marquee class="moving2" behavior="scroll" direction="left">The Person who [verb] [noun] [time or place] is an
-          artist?</marquee>
-        <marquee class="moving3" behavior="scroll" direction="right">Your definition will be permanently stored in the
-          blockchain.</marquee>
-        <marquee class="moving3" behavior="scroll" direction="left">Your participation will contribute to artist cricle.
-        </marquee>
-        <marquee class="moving2" behavior="scroll" direction="right">Let's define artist together.</marquee>
-      </div>
-      <br>
-      <div class="typein">
-
         <div class="connect">
           <button id="connectButton">Connect Blockchain</button>
           <br>
           <strong>Connection Status:</strong>
           <span id="connectionStatus"> × Not connected</span>
         </div>
-<br>
-        <label for="verbInput">Enter Verb</label>
+        <!-- <marquee class="moving1" behavior="scroll" direction="right">Who do you think is an artist？Who can be an
+          artist？Who might be an artist？</marquee> -->
+        <!-- <marquee class="moving2" behavior="scroll" direction="left">The Person who [verb] [noun] [time or place] is an
+          artist?</marquee>
+        <marquee class="moving3" behavior="scroll" direction="right">Your definition will be permanently stored in the
+          blockchain.</marquee>
+        <marquee class="moving3" behavior="scroll" direction="left">Your participation will contribute to artist cricle.
+        </marquee>
+        <marquee class="moving2" behavior="scroll" direction="right">Let's define artist together.</marquee> -->
+      </div>
+      <br>
+      <div class="typein">
+
+       <p>The person who</p>
+        <label for="verbInput">(verb)</label>
         <br>
-        <input type="text" id="verbInput" placeholder="wanders...">
+        <input type="text" id="verbInput" placeholder="wanders around">
         <br>
-        <label for="nounInput">Enter Noun</label>
+        <label for="nounInput">(noun)</label>
         <br>
-        <input type="text" id="nounInput" placeholder="Gallery...">
+        <input type="text" id="nounInput" placeholder="in the gallery">
         <br>
-        <label for="timeInput">Enter Time or Place</label>
+        <label for="timeInput">(time or/and location)</label>
         <br>
-        <input type="text" id="timeInput" placeholder="Today...">
+        <input type="text" id="timeInput" placeholder="at midnight">
+        <p>is an artist.</p>
       </div>
 
       <br>
@@ -77,8 +79,7 @@
     </div>
 
     <div class="session3">
-      <p class="typing" id="typing-text">
-      </p>
+      
       <div class="signature">
         <p>2023 @3e-von</p>
       </div>
