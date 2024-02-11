@@ -23,8 +23,7 @@
   <div class="bg"></div>
   <div class="container">
     <div class="session1">
-      
-      <div class="marquees">
+      <div class="connect-blockchain">
         <div class="connect">
           <button id="connectButton">Connect Blockchain</button>
           <br>
@@ -43,8 +42,7 @@
       </div>
       <br>
       <div class="typein">
-
-       <p>The person who</p>
+       
         <label for="verbInput">(verb)</label>
         <br>
         <input type="text" id="verbInput" placeholder="wanders around">
@@ -56,33 +54,35 @@
         <label for="timeInput">(time or/and location)</label>
         <br>
         <input type="text" id="timeInput" placeholder="at midnight">
-        <p>is an artist.</p>
+   
       </div>
 
       <br>
       <div class="button-container">
         <button class="button1" id="setArtistButton">STEP 1<br>Set Your Artist<br><small>[click confirm]</small></button>
-        <button class="button2" id="generateArtistButton">STEP 2<br>Next Random New Artist</button>
+        <!-- <button class="button2" id="generateArtistButton">STEP 2<br>Next Random New Artist</button> -->
       </div>
     </div>
 
     <div class="session2">
       <h1>ARTIST POEM PROCESSOR</h1>
       <pre id="userSentence" class="current"></pre>
-
       <br>
-      <div class="typein-history">
-        <h2>TYPE-IN HISTORY</h2>
-        <p class="note">* scroll up to check</p>
-        <ul id="history" class="history-record"></ul>
-      </div>
     </div>
 
     <div class="session3">
-      
       <div class="signature">
-        <p>2023 @3e-von</p>
+        <div class="typein-history">
+          <h2>TYPE-IN HISTORY</h2>
+          <p class="note">* scroll up to check</p>
+          <ul id="history" class="history-record"></ul>
+        </div>
       </div>
+      <br>
+      <div class="button-right">
+        <button class="button2" id="generateArtistButton">STEP 2<br>Next Random New Artist</button>
+     </div>
+
     </div>
 
     <!---------connection status----------->

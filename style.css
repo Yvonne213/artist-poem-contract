@@ -58,12 +58,34 @@ body {
 }
 
 /********************/
-.marquees {
+.connect-blockchain {
   background-color: #e3878727;
   border: 2px solid #ffffff;
   padding: 15px 20px;
   font-size: clamp(20px, 1vw, 30px);
 }
+.connect{
+  font-size:clamp(15px, 0.8vw, 40px) ;
+  text-align: center;
+  color: #fee2e2;
+  }
+  #connectButton{
+    margin-bottom: 1vh;
+    background-color: #ffffff2d;
+    color: rgb(231, 110, 110);
+    /* border: 1px solid rgba(255, 255, 255, 0.929); */
+    border:none;
+    font-size: 15px;
+    padding:10px ;
+    font-family: "magistral", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    border-radius: 5px;
+  }
+  #connectButton:hover {
+    background-color: #0088ff31;
+    box-shadow: 0 8px 16px 0 rgba(124, 242, 255, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  }
 
 .moving1 {
   /* Set the text size to 20 pixels */
@@ -97,29 +119,7 @@ body {
   /* Adjust the line-height value as needed */
   border: 2px solid #ffffff;
 }
-.connect{
-font-size:clamp(15px, 0.8vw, 40px) ;
-text-align: center;
-color: #fee2e2;
-}
 
-#connectButton{
-  margin-bottom: 1vh;
-  background-color: #ffffff2d;
-  color: rgb(231, 110, 110);
-  /* border: 1px solid rgba(255, 255, 255, 0.929); */
-  border:none;
-  font-size: 15px;
-  padding:10px ;
-  font-family: "magistral", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  border-radius: 5px;
-}
-#connectButton:hover {
-  background-color: #0088ff31;
-  box-shadow: 0 8px 16px 0 rgba(124, 242, 255, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
-}
 input {
   /* margin-top: 10px;
   margin-bottom: 10px; */
@@ -146,6 +146,20 @@ input:hover {
 }
 
 /********************/
+.button-container {
+  display:flex;
+  gap: 20px;
+  /* Adjust the space between buttons by changing this value */
+  background-color: #e3757527;
+  padding: 20px;
+  /* Add some padding for better visibility */
+  /* width: 480px; /* Set the width of the session */
+
+  /* Set the height of the session */
+  border: 2px solid #ffffff;
+  height:30%;
+}
+
 .button1,
 .button2 {
  border:none;
@@ -160,11 +174,12 @@ input:hover {
   font-style: normal;
 
   border-radius: 5px;
-  aspect-ratio: 1 / 1;
-  flex-grow: 1;
+  /* aspect-ratio: 1 / 1; */
+  /* flex-grow: 1; */
   width: 100%;
+  height: auto; 
   /* Set width to 100% for responsiveness */
-  max-width: 310px;
+  max-width: 500px;
   /* Set a maximum width for larger screens */
 
 }
@@ -172,21 +187,6 @@ input:hover {
 button:hover {
   background-color: #0088ff31;
   box-shadow: 0 8px 16px 0 rgba(124, 242, 255, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
-}
-
-.button-container {
-
-  display: flex;
-  gap: 20px;
-  /* Adjust the space between buttons by changing this value */
-
-  background-color: #e3757527;
-  padding: 20px;
-  /* Add some padding for better visibility */
-  /* width: 480px; /* Set the width of the session */
-
-  /* Set the height of the session */
-  border: 2px solid #ffffff;
 }
 
 /***************************************/
@@ -197,7 +197,6 @@ button:hover {
   /* width: 800px;  Set the width of the session */
   /* Set the height of the session */
   border: 2px solid #ffffff;
-
 
 }
 
@@ -217,13 +216,15 @@ h1 {
   margin: auto; /* Center the div horizontally */
   color: #0088ff79;
 
-  font-size: clamp(22px, 1.2vw, 35px);
+  font-size: clamp(50px, 1.2vw, 100px);
   font-family: "magistral", sans-serif;
   font-weight: 700;
   font-style: normal;
   list-style: none;
   background-color: rgba(255, 255, 255, 0.119);
-  padding: 20px;
+  padding: 160px 20px;
+ height: auto;
+  
 }
 
 /********************/
@@ -280,14 +281,16 @@ h1 {
 }
 
 /***************************************/
-.session3 {
-  background-color: #ff626227;
-  padding: 40px;
+.session3 { 
+    display: flex;
+  flex-direction: column;
+  /* background-color: #e3757527;
+  padding: 20px; */
   /* Add some padding for better visibility */
   /* width: 450px; /* Set the width of the session */
 
   /* Set the height of the session */
-  border: 2px solid #ffffff;
+  /* border: 2px solid #ffffff;
 
   font-size: 20px;
   font-family: "magistral", sans-serif;
@@ -295,30 +298,35 @@ h1 {
   font-style: normal;
   text-align: left;
   color: rgb(255, 255, 255);
-  line-height: 2;
+  line-height: 2; */
+} 
+
+.button-right {
+  display:flex;
+  gap: 20px;
+  /* Adjust the space between buttons by changing this value */
+  background-color: #e3757527;
+  padding: 20px;
+  /* Add some padding for better visibility */
+  /* width: 480px; /* Set the width of the session */
+
+  /* Set the height of the session */
+  border: 2px solid #ffffff;
+  height:30%;
+}
+.signature{
+  background-color: #e3757527;
+  padding: 20px 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Add some padding for better visibility */
+  /*width: 460px; /* Set the width of the session */
+  /* Set the height of the session */
+  line-height: 0.7;
+  /* Adjust the line-height value as needed */
+  border: 2px solid #ffffff;
 }
 
 /********************/
-.typing {
-  white-space: pre-line;
-  /* Preserve line breaks */
-  overflow: hidden;
-  /* Hide overflowing text */
-  display: inline-block;
-  /* Allow the width to change as text is added */
-  font-size: clamp(20px, 1vw, 40px);
-}
-
-/********************/
-
-.signature {
-  /* background-color: rgba(254, 98, 98, 0.281);
-  background-clip: content-box;
-  background-size:100% 20px;
-  width: 255px; */
-  font-size: clamp(20px, 1vw, 30px);
-  word-spacing: 10px;
-  margin-right: 20px;
-  text-align: right;
-
-}
