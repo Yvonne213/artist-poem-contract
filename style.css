@@ -115,7 +115,7 @@ body {
   /* Add some padding for better visibility */
   /*width: 460px; /* Set the width of the session */
   /* Set the height of the session */
-  line-height: 0.7;
+  line-height: 1;
   /* Adjust the line-height value as needed */
   border: 2px solid #ffffff;
 }
