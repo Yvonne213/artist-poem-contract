@@ -62,10 +62,9 @@ body {
   background-color: #e3878727;
   border: 2px solid #ffffff;
   padding: 15px 20px;
-  font-size: clamp(20px, 1vw, 30px);
 }
 .connect{
-  font-size:clamp(15px, 0.8vw, 40px) ;
+  font-size:clamp(18px, 0.8vw, 40px) ;
   text-align: center;
   color: #fee2e2;
   }
@@ -75,12 +74,13 @@ body {
     color: rgb(231, 110, 110);
     /* border: 1px solid rgba(255, 255, 255, 0.929); */
     border:none;
-    font-size: 15px;
+    font-size: 20px;
     padding:10px ;
     font-family: "magistral", sans-serif;
     font-weight: 700;
     font-style: normal;
     border-radius: 5px;
+    width:100%;
   }
   #connectButton:hover {
     background-color: #0088ff31;
@@ -104,6 +104,7 @@ body {
   line-height: 1;
   /* Adjust the line-height value as needed */
   border: 2px solid #ffffff;
+  color:#ffffffac;
 }
 
 input {
@@ -134,11 +135,11 @@ input:hover {
 /********************/
 .button1{
   border:none;
-   padding: 20px;
+   padding: 60px;
    background-color: #e01e1e2d;
    color: rgb(231, 110, 110);
    border: 1.5px solid rgba(255, 255, 255, 0.929);
-   font-size: clamp(20px, 1vw, 30px);
+   font-size: clamp(30px, 1vw, 50px);
  
    font-family: "magistral", sans-serif;
    font-weight: 700;
