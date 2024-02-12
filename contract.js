@@ -84,6 +84,42 @@ async function main() {
     // require us to send a transaction (like changing a number on the blockchain)
     const contractWithSigner = contract.connect(signer);
 
+
+     //-------------------- place holder--------------------------------------
+     const dynamicPlaceholders = [
+        {
+          elementId: "verbInput",
+          placeholders: [ "daydreams about",
+          "thinks about",
+          "steals",
+          "smiles at"],
+          currentIndex: 0
+        },
+        {
+          elementId: "nounInput",
+          placeholders: ["birds", "several apples", "humans","a universe"],
+          currentIndex: 0
+        },
+        {
+            elementId: "timeInput",
+            placeholders: ["everyday", "in the gallery", "every seconds","on the grass"],
+            currentIndex: 0
+          }
+      ];
+  
+// Function to change the placeholder
+function changePlaceholder() {
+    dynamicPlaceholders.forEach((item) => {
+      const inputElement = document.getElementById(item.elementId);
+      inputElement.placeholder = item.placeholders[item.currentIndex];
+      item.currentIndex = (item.currentIndex + 1) % item.placeholders.length; // Cycle through the placeholders
+    });
+  }
+
+// Change the placeholder every 5 seconds (5000 milliseconds)
+setInterval(changePlaceholder, 3000);
+
+
     //.....................................................................
     // WebSocket handling 
     let generatedWindow; // Variable to store the reference to the opened window
@@ -128,39 +164,7 @@ async function main() {
         console.log("send out ws message");
         ws.send(content_content);
     }
-    //-------------------- place holder--------------------------------------
-    const dynamicPlaceholders = [
-        {
-          elementId: "verbInput",
-          placeholders: [ "daydreams about",
-          "thinks about",
-          "steals",
-          "smiles at"],
-          currentIndex: 0
-        },
-        {
-          elementId: "nounInput",
-          placeholders: ["birds", "several apples", "humans","a universe"],
-          currentIndex: 0
-        },
-        {
-            elementId: "timeInput",
-            placeholders: ["everyday", "in the gallery", "every seconds","on the grass"],
-            currentIndex: 0
-          }
-      ];
-  
-// Function to change the placeholder
-function changePlaceholder() {
-    dynamicPlaceholders.forEach((item) => {
-      const inputElement = document.getElementById(item.elementId);
-      inputElement.placeholder = item.placeholders[item.currentIndex];
-      item.currentIndex = (item.currentIndex + 1) % item.placeholders.length; // Cycle through the placeholders
-    });
-  }
-
-// Change the placeholder every 5 seconds (5000 milliseconds)
-setInterval(changePlaceholder, 3000);
+   
 
 //--------------------display type-in--------------------------------------------
     const sentenceHistory = [];
