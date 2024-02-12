@@ -63,29 +63,32 @@ body {
   border: 2px solid #ffffff;
   padding: 15px 20px;
 }
-.connect{
-  font-size:clamp(18px, 0.8vw, 40px) ;
+
+.connect {
+  font-size: clamp(18px, 0.8vw, 40px);
   text-align: center;
   color: #fee2e2;
-  }
-  #connectButton{
-    margin-bottom: 1vh;
-    background-color: #ffffff2d;
-    color: rgb(231, 110, 110);
-    /* border: 1px solid rgba(255, 255, 255, 0.929); */
-    border:none;
-    font-size: 20px;
-    padding:10px ;
-    font-family: "magistral", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    border-radius: 5px;
-    width:100%;
-  }
-  #connectButton:hover {
-    background-color: #0088ff31;
-    box-shadow: 0 8px 16px 0 rgba(124, 242, 255, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
-  }
+}
+
+#connectButton {
+  margin-bottom: 1vh;
+  background-color: #ffffff2d;
+  color: rgb(231, 110, 110);
+  /* border: 1px solid rgba(255, 255, 255, 0.929); */
+  border: none;
+  font-size: 20px;
+  padding: 10px;
+  font-family: "magistral", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+}
+
+#connectButton:hover {
+  background-color: #0088ff31;
+  box-shadow: 0 8px 16px 0 rgba(124, 242, 255, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
 
 
 /********************/
@@ -104,7 +107,7 @@ body {
   line-height: 1;
   /* Adjust the line-height value as needed */
   border: 2px solid #ffffff;
-  color:#ffffffac;
+  color: #ffffffac;
 }
 
 input {
@@ -114,14 +117,14 @@ input {
   font-size: 20px;
   /* Set a maximum width for the input fields */
   /*width: 435px; /* Make sure the width doesn't exceed the maximum width */
-  background-color:  rgba(255, 127, 127, 0.256);
+  background-color: rgba(255, 127, 127, 0.256);
   border: 1px solid #ffffff;
   color: #6c020279;
   outline: none;
 }
 
 input::placeholder {
-  color: #0088ff47;
+  color: #0088ff6f;
   /* Set the color you want for the placeholder text */
 }
 
@@ -133,33 +136,35 @@ input:hover {
 }
 
 /********************/
-.button1{
-  border:none;
-   padding: 60px;
-   background-color: #e01e1e2d;
-   color: rgb(231, 110, 110);
-   border: 1.5px solid rgba(255, 255, 255, 0.929);
-   font-size: clamp(30px, 1vw, 50px);
- 
-   font-family: "magistral", sans-serif;
-   font-weight: 700;
-   font-style: normal;
- 
-   border-radius: 5px;
-   /* aspect-ratio: 1 / 1; */
-   /* flex-grow: 1; */
-   width: 100%;
-   height: auto; 
-   /* Set width to 100% for responsiveness */
-   max-width: 500px;
-   /* Set a maximum width for larger screens */
-   margin-bottom:10px;
- }
+.button1 {
+  border: none;
+  padding: 60px;
+  background-color: #e01e1e2d;
+  color: rgb(231, 110, 110);
+  border: 1.5px solid rgba(255, 255, 255, 0.929);
+  font-size: clamp(30px, 1vw, 50px);
+
+  font-family: "magistral", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+
+  border-radius: 5px;
+  /* aspect-ratio: 1 / 1; */
+  /* flex-grow: 1; */
+  width: 100%;
+  height: auto;
+  /* Set width to 100% for responsiveness */
+  max-width: 500px;
+  /* Set a maximum width for larger screens */
+  margin-bottom: 10px;
+}
+
 .button-container {
-  display:flex;
+  display: flex;
   gap: 20px;
   /* Adjust the space between buttons by changing this value */
-  align-items: start; /* Align items at the top */
+  align-items: start;
+  /* Align items at the top */
   background-color: #e3757527;
   padding: 20px;
   /* Add some padding for better visibility */
@@ -167,13 +172,14 @@ input:hover {
 
   /* Set the height of the session */
   border: 2px solid #ffffff;
-  height:30%;
+  height: 30%;
 }
 
 .button-marquee-container {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center-align the items vertically */
+  align-items: center;
+  /* Center-align the items vertically */
 }
 
 
@@ -182,13 +188,17 @@ button:hover {
   background-color: #0088ff31;
   box-shadow: 0 8px 16px 0 rgba(124, 242, 255, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
+
 .moving1 {
   /* Set the text size to 20 pixels */
   color: #0088ff79;
-  line-height: 2; /* Adjust line height to reduce spacing */
-  font-size: 18px; /* Adjust font size as needed */
-  
+  line-height: 2;
+  /* Adjust line height to reduce spacing */
+  font-size: 18px;
+  /* Adjust font size as needed */
+
 }
+
 /***************************************/
 .session2 {
   background-color: #e3757527;
@@ -222,7 +232,7 @@ h1 {
   list-style: none;
   background-color: rgba(255, 255, 255, 0.119);
   padding: 160px 20px;
- height: auto;
+  height: auto;
 }
 
 /********************/
@@ -278,8 +288,8 @@ h1 {
 }
 
 /***************************************/
-.session3 { 
-    display: flex;
+.session3 {
+  display: flex;
   flex-direction: column;
   /* background-color: #e3757527;
   padding: 20px; */
@@ -296,10 +306,10 @@ h1 {
   text-align: left;
   color: rgb(255, 255, 255);
   line-height: 2; */
-} 
+}
 
 .button-right {
-  display:flex;
+  display: flex;
   gap: 20px;
   /* Adjust the space between buttons by changing this value */
   background-color: #e3757527;
@@ -309,9 +319,10 @@ h1 {
 
   /* Set the height of the session */
   border: 2px solid #ffffff;
-  height:30%;
+  height: 30%;
 }
-.signature{
+
+.signature {
   background-color: #e3757527;
   padding: 20px 20px;
   flex-grow: 1;
@@ -325,26 +336,28 @@ h1 {
   /* Adjust the line-height value as needed */
   border: 2px solid #ffffff;
 }
+
 .button2 {
-  border:none;
-   padding: 20px;
-   background-color: #e01e1e2d;
-   color: rgb(231, 110, 110);
-   border: 1.5px solid rgba(255, 255, 255, 0.929);
-   font-size: clamp(30px, 1vw, 50px);
- 
-   font-family: "magistral", sans-serif;
-   font-weight: 700;
-   font-style: normal;
- 
-   border-radius: 5px;
-   /* aspect-ratio: 1 / 1; */
-   /* flex-grow: 1; */
-   width: 100%;
-   height: auto; 
-   /* Set width to 100% for responsiveness */
-   max-width: 500px;
-   /* Set a maximum width for larger screens */
-   margin-bottom:10px;
- }
+  border: none;
+  padding: 20px;
+  background-color: #e01e1e2d;
+  color: rgb(231, 110, 110);
+  border: 1.5px solid rgba(255, 255, 255, 0.929);
+  font-size: clamp(30px, 1vw, 50px);
+
+  font-family: "magistral", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+
+  border-radius: 5px;
+  /* aspect-ratio: 1 / 1; */
+  /* flex-grow: 1; */
+  width: 100%;
+  height: auto;
+  /* Set width to 100% for responsiveness */
+  max-width: 500px;
+  /* Set a maximum width for larger screens */
+  margin-bottom: 10px;
+}
+
 /********************/

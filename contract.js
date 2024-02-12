@@ -105,7 +105,7 @@ async function main() {
         if (!isThirdHTML) {
             const terminal = document.getElementById("userSentence");
             terminal.textContent = generatedSentence;
-            
+
         }
 
         // Update the sentence history list
@@ -128,7 +128,41 @@ async function main() {
         console.log("send out ws message");
         ws.send(content_content);
     }
-    //--------------------display type-in--------------------------------------------
+    //-------------------- place holder--------------------------------------
+    const dynamicPlaceholders = [
+        {
+          elementId: "verbInput",
+          placeholders: [ "daydreams about",
+          "thinks about",
+          "steals",
+          "smiles at"],
+          currentIndex: 0
+        },
+        {
+          elementId: "nounInput",
+          placeholders: ["birds", "several apples", "humans","a universe"],
+          currentIndex: 0
+        },
+        {
+            elementId: "timeInput",
+            placeholders: ["everyday", "in the gallery", "every seconds","on the grass"],
+            currentIndex: 0
+          }
+      ];
+  
+// Function to change the placeholder
+function changePlaceholder() {
+    dynamicPlaceholders.forEach((item) => {
+      const inputElement = document.getElementById(item.elementId);
+      inputElement.placeholder = item.placeholders[item.currentIndex];
+      item.currentIndex = (item.currentIndex + 1) % item.placeholders.length; // Cycle through the placeholders
+    });
+  }
+
+// Change the placeholder every 5 seconds (5000 milliseconds)
+setInterval(changePlaceholder, 3000);
+
+//--------------------display type-in--------------------------------------------
     const sentenceHistory = [];
     function generateUserSentence() {
         const verbInput = document.getElementById("verbInput").value;
@@ -186,7 +220,7 @@ async function main() {
             await contractWithSigner.textInput(verb, noun, time);
             console.log("Artist set successfully!");
             generateUserSentence();
-            
+
         } catch (error) {
             console.error("Error setting artist:", error);
         }
@@ -196,45 +230,45 @@ async function main() {
     // Generate New Artist Button Click Event
     document.getElementById("generateArtistButton").addEventListener("click", async () => {
         // try {
-            // Call the getRandomVerb, getRandomNoun, and getRandomTime functions in your smart contract
-            const randomVerb = await contractWithSigner.getRandomVerb();
-            const randomNoun = await contractWithSigner.getRandomNoun();
-            const randomTime = await contractWithSigner.getRandomTime();
+        // Call the getRandomVerb, getRandomNoun, and getRandomTime functions in your smart contract
+        const randomVerb = await contractWithSigner.getRandomVerb();
+        const randomNoun = await contractWithSigner.getRandomNoun();
+        const randomTime = await contractWithSigner.getRandomTime();
 
-            // Display the generated artist in your HTML (adjust as needed)
-            //   document.getElementById("current").innerText = `The person who ${randomVerb} ${randomNoun} ${randomTime} is an artist.`;
-            const line1 = `The person who`;
-            const line2 = `${randomVerb} ${randomNoun}`;
-            const line3 = `${randomTime}`;
-            const line4 = `is an artist`;
-            // Concatenate the lines with line breaks
-            const artistDescription = `${line1}\n${line2}\n${line3}\n${line4}`;
-            // Display the generated artist in your HTML
-            console.log(artistDescription);
-            console.log(document.getElementById("userSentence")); // Error here 
-            // document.getElementById("userSentence").innerText = artistDescription;
+        // Display the generated artist in your HTML (adjust as needed)
+        //   document.getElementById("current").innerText = `The person who ${randomVerb} ${randomNoun} ${randomTime} is an artist.`;
+        const line1 = `The person who`;
+        const line2 = `${randomVerb} ${randomNoun}`;
+        const line3 = `${randomTime}`;
+        const line4 = `is an artist`;
+        // Concatenate the lines with line breaks
+        const artistDescription = `${line1}\n${line2}\n${line3}\n${line4}`;
+        // Display the generated artist in your HTML
+        console.log(artistDescription);
+        console.log(document.getElementById("userSentence")); // Error here 
+        // document.getElementById("userSentence").innerText = artistDescription;
 
-            sendMessage(artistDescription);
+        sendMessage(artistDescription);
 
-            //----------------
-            // Add the generated artist description to the history list
-            sentenceHistory.push(artistDescription);
+        //----------------
+        // Add the generated artist description to the history list
+        sentenceHistory.push(artistDescription);
 
-            // Update the sentence history list
-            const historyList = document.getElementById("history");
-            if (historyList) {
-                historyList.innerHTML = innerhtml.append ;
-            }
-            sentenceHistory.forEach((sentence, index) => {
-                const listItem = document.createElement("li");
-                listItem.textContent = sentence;
-// add 2024.2.11
-                historyList.appendChild(listItem);
-            });
+        // Update the sentence history list
+        const historyList = document.getElementById("history");
+        if (historyList) {
+            historyList.innerHTML = innerhtml.append;
+        }
+        sentenceHistory.forEach((sentence, index) => {
+            const listItem = document.createElement("li");
+            listItem.textContent = sentence;
+            // add 2024.2.11
+            historyList.appendChild(listItem);
+        });
 
-            historyList.scrollTop = historyList.scrollHeight;
-            //add 2024.2.11
-            const sentenceHistory = [];
+        historyList.scrollTop = historyList.scrollHeight;
+        //add 2024.2.11
+        const sentenceHistory = [];
         // } catch (error) {
         //     console.error("Error generating artist:", error);
         // }
@@ -243,34 +277,5 @@ async function main() {
 
 
 };
-//----------------------------------------------------------------
 
-
-//----------typing effect----------------------
-
-const paragraph = document.getElementById('typing-text');
-const text = `"Artist Poem" is an Ethereum contract that enables individuals to define the term "Artist". Participants can contribute words they believe are associated with artists, and the contract will securely store their definitions on the Blockchain permanently.
-  In theory, as a sufficient number of definitions are input by the audience, the repetition in the database will lead the artist manifesto to gradually converge toward a midpoint. However, before reaching that point, let's play and create first.`;
-let index = 0;
-
-function typeNextCharacter() {
-  if (!paragraph) return;
-  if (index < text.length) {
-    paragraph.appendChild(document.createTextNode(text.charAt(index)));
-    index++;
-    setTimeout(typeNextCharacter, 50); // Adjust the typing speed (in milliseconds)
-  } else {
-    // Display the entire text for 5 seconds
-    setTimeout(() => {
-      // Reset the index and clear the paragraph
-      index = 0;
-      paragraph.textContent = '';
-      // Restart typing
-      setTimeout(typeNextCharacter, 1000); // Optional delay before restarting (in milliseconds)
-    }, 5000); // 5000 milliseconds (5 seconds)
-  }
-}
-
-// Initial start
-setTimeout(typeNextCharacter, 1000);
 
