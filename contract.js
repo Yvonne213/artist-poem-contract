@@ -89,20 +89,20 @@ async function main() {
      const dynamicPlaceholders = [
         {
           elementId: "verbInput",
-          placeholders: [ "daydreams about",
-          "thinks about",
-          "steals",
-          "smiles at"],
+          placeholders: [ "eg: daydreams about",
+          "eg: thinks about",
+          "eg: steals",
+          "eg: doesn't sleep"],
           currentIndex: 0
         },
         {
           elementId: "nounInput",
-          placeholders: ["birds", "several apples", "humans","a universe"],
+          placeholders: ["eg: birds", "eg: several apples", "eg: pantties","eg: a universe"],
           currentIndex: 0
         },
         {
             elementId: "timeInput",
-            placeholders: ["everyday", "in the gallery", "every seconds","on the grass"],
+            placeholders: ["eg: everyday", "eg: in the gallery", "eg: 5am everyday","eg: on the grass"],
             currentIndex: 0
           }
       ];
@@ -129,7 +129,8 @@ setInterval(changePlaceholder, 3000);
         // trigger the message update
         console.log("sentence received! do something here!");
         console.log(event.data);
-        generatedSentence = event.data;
+        generatedSentence = event.data.toUpperCase();
+      
 
         // Add the generated sentence to the history
         sentenceHistory.push(generatedSentence);
@@ -151,7 +152,7 @@ setInterval(changePlaceholder, 3000);
         }
         sentenceHistory.forEach((sentence, index) => {
             const listItem = document.createElement("li");
-            listItem.textContent = sentence;
+            listItem.textContent = sentence.toUpperCase();
 
             historyList.appendChild(listItem);
         });
@@ -184,7 +185,7 @@ setInterval(changePlaceholder, 3000);
 
             // Display the generated sentence
             const userSentence = document.getElementById("userSentence");
-            userSentence.textContent = generatedSentence;
+            userSentence.textContent = generatedSentence.toUpperCase();
             sendMessage(generatedSentence);
             // Update the sentence history list
             const historyList = document.getElementById("history");
