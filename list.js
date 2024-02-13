@@ -7,7 +7,7 @@ ws.onmessage = function (event) {
   // trigger the message update
   console.log("sentence received! do something here!");
   console.log(event.data);
-  generatedSentence = event.data;
+  generatedSentence = event.data.toUpperCase();
 
   // Add the generated sentence to the history
   sentenceHistory.push(generatedSentence);
@@ -23,7 +23,7 @@ ws.onmessage = function (event) {
   }
   sentenceHistory.forEach((sentence, index) => {
     const listItem = document.createElement("li");
-    listItem.textContent = sentence;
+    listItem.textContent = sentence.toUpperCase();
 
     historyList.appendChild(listItem);
   });

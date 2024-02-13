@@ -4,8 +4,8 @@ html {
   position: relative;
   z-index: 1;
 
-  background-color: rgb(253, 204, 204);
-  color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
+  color: rgb(226, 117, 117);
   text-align: center;
 
   font-family: "magistral", sans-serif;
@@ -27,7 +27,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: radial-gradient(circle at 10px 10px, #ffffff 1px, transparent 1px);
+  background: radial-gradient(circle at 10px 10px, #afaeae8f 1px, transparent 1px);
   background-size: 20px 20px;
   /* Adjust the size of each dot and spacing */
 }
@@ -59,21 +59,21 @@ body {
 
 /********************/
 .connect-blockchain {
-  background-color: #e3878727;
-  border: 2px solid #ffffff;
+  background-color: #feaaaa0c;
+  border: 2px solid rgba(254, 72, 72, 0.518);
   padding: 15px 20px;
 }
 
 .connect {
   font-size: clamp(18px, 0.8vw, 40px);
   text-align: center;
-  color: #fee2e2;
+  color: #f6afafb4;
 }
 
 #connectButton {
   margin-bottom: 1vh;
-  background-color: #ffffff2d;
-  color: rgb(231, 110, 110);
+  background-color: #fecdcd77;
+  color: rgb(229, 128, 128);
   /* border: 1px solid rgba(255, 255, 255, 0.929); */
   border: none;
   font-size: 20px;
@@ -95,7 +95,7 @@ body {
 .typein {
   text-align: left;
   font-size: clamp(20px, 1vw, 40px);
-  background-color: #e3757527;
+  background-color: #feaaaa0c;
   padding: 25px 20px;
   flex-grow: 1;
   display: flex;
@@ -106,8 +106,8 @@ body {
   /* Set the height of the session */
   line-height: 1;
   /* Adjust the line-height value as needed */
-  border: 2px solid #ffffff;
-  color: #ffffffac;
+  border: 2px solid rgba(254, 72, 72, 0.518);
+  color:rgb(225, 128, 128);
 }
 
 input {
@@ -117,14 +117,14 @@ input {
   font-size: 20px;
   /* Set a maximum width for the input fields */
   /*width: 435px; /* Make sure the width doesn't exceed the maximum width */
-  background-color: rgba(255, 127, 127, 0.256);
-  border: 1px solid #ffffff;
-  color: #6c020279;
+  background-color: #feaaaa40;
+  border: 1px solid rgb(252, 203, 203);
+  color: #830e0e;
   outline: none;
 }
 
 input::placeholder {
-  color: #0088ff6f;
+  color: #b047476f;
   /* Set the color you want for the placeholder text */
 }
 
@@ -138,10 +138,10 @@ input:hover {
 /********************/
 .button1 {
   border: none;
-  padding: 60px;
-  background-color: #e01e1e2d;
-  color: rgb(231, 110, 110);
-  border: 1.5px solid rgba(255, 255, 255, 0.929);
+  padding: clamp(60px, 1vw, 80px);
+  background-color: #fea2a253;
+  color: rgb(208, 88, 88);
+  border: 1.5px solid rgba(251, 208, 208, 0.5);
   font-size: clamp(30px, 1vw, 50px);
 
   font-family: "magistral", sans-serif;
@@ -154,7 +154,7 @@ input:hover {
   width: 100%;
   height: auto;
   /* Set width to 100% for responsiveness */
-  max-width: 500px;
+  max-width: 700px;
   /* Set a maximum width for larger screens */
   margin-bottom: 10px;
 }
@@ -165,13 +165,13 @@ input:hover {
   /* Adjust the space between buttons by changing this value */
   align-items: start;
   /* Align items at the top */
-  background-color: #e3757527;
+  background-color: #feaaaa0c;
   padding: 20px;
   /* Add some padding for better visibility */
   /* width: 480px; /* Set the width of the session */
 
   /* Set the height of the session */
-  border: 2px solid #ffffff;
+  border: 2px solid rgba(254, 72, 72, 0.518);
   height: 30%;
 }
 
@@ -191,7 +191,7 @@ button:hover {
 
 .moving1 {
   /* Set the text size to 20 pixels */
-  color: #0088ff79;
+  color: #b8676779;
   line-height: 2;
   /* Adjust line height to reduce spacing */
   font-size: 18px;
@@ -201,12 +201,12 @@ button:hover {
 
 /***************************************/
 .session2 {
-  background-color: #e3757527;
+  background-color: #feaaaa16;
   padding: 20px;
   /* Add some padding for better visibility */
   /* width: 800px;  Set the width of the session */
   /* Set the height of the session */
-  border: 2px solid #ffffff;
+  border: 2px solid rgba(254, 72, 72, 0.518);
 
 }
 
@@ -219,30 +219,30 @@ h1 {
 }
 
 .current {
-  border: 1.5px solid #fee2e2;
+  /* border: 1.5px solid rgba(145, 145, 145, 0.343); */
   /*max-width: 800px;
   padding: 20px;
   margin: auto; /* Center the div horizontally */
-  color: #0088ff79;
-
+  color: #f85e5ebe;
+  text-transform: uppercase;
   font-size: clamp(50px, 1.2vw, 100px);
   font-family: "magistral", sans-serif;
   font-weight: 700;
   font-style: normal;
   list-style: none;
-  background-color: rgba(255, 255, 255, 0.119);
+  background-color: rgba(255, 173, 173, 0.119);
   padding: 160px 20px;
   height: auto;
 }
 
 /********************/
 .typein-history {
-  border: 1.5px solid #f7c6c6;
+  /* border: 1.5px solid rgb(145, 145, 145); */
   /* max-width: 800px; */
   padding: 10px;
   /* margin: auto;  */
   font-size: 20px;
-  background-color: rgba(255, 255, 255, 0.201);
+  background-color: rgba(255, 211, 211, 0.282);
 }
 
 .note {
@@ -308,22 +308,9 @@ h1 {
   line-height: 2; */
 }
 
-.button-right {
-  display: flex;
-  gap: 20px;
-  /* Adjust the space between buttons by changing this value */
-  background-color: #e3757527;
-  padding: 20px;
-  /* Add some padding for better visibility */
-  /* width: 480px; /* Set the width of the session */
-
-  /* Set the height of the session */
-  border: 2px solid #ffffff;
-  height: 30%;
-}
 
 .signature {
-  background-color: #e3757527;
+  background-color: #ffc2c227;
   padding: 20px 20px;
   flex-grow: 1;
   display: flex;
@@ -334,15 +321,28 @@ h1 {
   /* Set the height of the session */
   line-height: 0.7;
   /* Adjust the line-height value as needed */
-  border: 2px solid #ffffff;
+  border: 2px solid rgba(254, 72, 72, 0.518);
+}
+.button-right {
+  display: flex;
+  gap: 20px;
+  /* Adjust the space between buttons by changing this value */
+  background-color: #ffc2c227;
+  padding: 20px;
+  /* Add some padding for better visibility */
+  /* width: 480px; /* Set the width of the session */
+
+  /* Set the height of the session */
+  border: 2px solid rgba(254, 72, 72, 0.518);
+  height: 30%;
 }
 
 .button2 {
   border: none;
   padding: 20px;
-  background-color: #e01e1e2d;
-  color: rgb(231, 110, 110);
-  border: 1.5px solid rgba(255, 255, 255, 0.929);
+  background-color: #fea2a253;;
+  color: rgb(153, 145, 145);
+  border: 1.5px solid rgba(251, 208, 208, 0.5);
   font-size: clamp(30px, 1vw, 50px);
 
   font-family: "magistral", sans-serif;
@@ -355,9 +355,9 @@ h1 {
   width: 100%;
   height: auto;
   /* Set width to 100% for responsiveness */
-  max-width: 500px;
+  max-width: 800px;
   /* Set a maximum width for larger screens */
-  margin-bottom: 10px;
+
 }
 
 /********************/
