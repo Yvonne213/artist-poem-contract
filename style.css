@@ -86,8 +86,8 @@ body {
 }
 
 #connectButton:hover {
-  background-color: #0088ff31;
-  box-shadow: 0 8px 16px 0 rgba(124, 242, 255, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  background-color: #0062b75a;
+  box-shadow: 0 8px 16px 0 rgba(0, 34, 101, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
 
 
@@ -129,10 +129,10 @@ input::placeholder {
 }
 
 input:hover {
-  border: 1.2px solid #03b8e5;
+  border: 1.2px solid #0198cf;
   /* Set the desired hover border color */
 
-  background-color: #03b8e51b;
+  background-color: #5e5e5e1b;
 }
 
 /********************/
@@ -185,8 +185,8 @@ input:hover {
 
 
 button:hover {
-  background-color: #0088ff31;
-  box-shadow: 0 8px 16px 0 rgba(124, 242, 255, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  background-color: #0062b75a;
+  box-shadow: 0 8px 16px 0 rgba(0, 34, 101, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
 
 .moving1 {
