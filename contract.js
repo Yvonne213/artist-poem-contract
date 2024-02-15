@@ -97,7 +97,7 @@ async function main() {
         },
         {
           elementId: "nounInput",
-          placeholders: ["eg: birds", "eg: several apples", "eg: pantties","eg: a universe"],
+          placeholders: ["eg: birds", "eg: several apples", "eg: panties","eg: a universe"],
           currentIndex: 0
         },
         {
