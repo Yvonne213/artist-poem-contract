@@ -8,7 +8,7 @@ html {
   color: rgb(0, 0, 0);
 
 
-  font-family: "magistral", sans-serif;
+  font-family: "pf-videotext", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -34,7 +34,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 
   border: clamp(0.1vw, 0.2vw, 0.6vw) solid #f7c6c6;
   width: 62vw;
