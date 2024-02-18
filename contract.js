@@ -177,9 +177,9 @@ setInterval(changePlaceholder, 3000);
 
         if (verbInput || nounInput || timeInput) {
             const line1 = `The person who`;
-            const line2 = `${verbInput} ${nounInput}`;
-            const line3 = `${timeInput}`;
-            const line4 = `is an artist`;
+            const line2 = `${verbInput} ${nounInput}`.padStart(5+ `${verbInput} ${nounInput}`.length);
+            const line3 = `${timeInput}`.padStart(10 + `${timeInput}`.length);
+            const line4 = `is an artist`.padStart(15 + `is an artist`.length);
 
             const generatedSentence = `${line1}\n${line2}\n${line3}\n${line4}`;
 
@@ -244,15 +244,11 @@ setInterval(changePlaceholder, 3000);
         //   document.getElementById("current").innerText = `The person who ${randomVerb} ${randomNoun} ${randomTime} is an artist.`;
         
         const line1 = `The person who`;
-        const line2 = `${randomVerb} ${randomNoun}`.padStart(2+`${randomVerb} ${randomNoun}`.length);
-        const line3 = `${randomTime}`.padStart(4 +  `${randomTime}`.length);
-        const line4 = `is an artist`.padStart(6 + `is an artist`.length);
-        // Concatenate the lines with line breaks
+        const line2 = `${randomVerb} ${randomNoun}`;
+        const line3 = `${randomTime}`;
+        const line4 = `is an artist`;
+       
         
-console.log(line1);
-console.log(line2);
-console.log(line3);
-console.log(line4);
 
         const artistDescription = `${line1}\n${line2}\n${line3}\n${line4}`;
         // Display the generated artist in your HTML

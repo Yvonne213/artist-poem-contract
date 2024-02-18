@@ -227,7 +227,7 @@ h1 {
   margin: auto; /* Center the div horizontally */
   color: #484848be;
   text-transform: uppercase;
-  font-size: clamp(50px, 1.2vw, 100px);
+  font-size: clamp(40px, 2vw, 100px);
 
   font-family: "poppins", sans-serif;
   font-weight: 400;
