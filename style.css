@@ -152,11 +152,11 @@ input:hover {
   /* aspect-ratio: 1 / 1; */
   /* flex-grow: 1; */
   width: 100%;
-  height: auto;
+  height: 23vh;
   /* Set width to 100% for responsiveness */
   max-width: 700px;
   /* Set a maximum width for larger screens */
-  margin-bottom: 10px;
+  
 }
 
 .button-container {
@@ -207,7 +207,9 @@ button:hover {
   /* width: 800px;  Set the width of the session */
   /* Set the height of the session */
   border: 2px solid rgba(254, 72, 72, 0.518);
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 h1 {
@@ -234,8 +236,15 @@ h1 {
 
   list-style: none;
   background-color: rgba(255, 173, 173, 0.119);
-  padding: 100px 20px;
-  height: auto;
+  padding: 0;
+  flex-grow: 1;
+  height: 100%;
+  margin: 0;
+  margin-top: 20px;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  text-align: left;
 }
 
 /********************/
