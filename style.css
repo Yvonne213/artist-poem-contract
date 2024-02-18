@@ -152,7 +152,7 @@ input:hover {
   /* aspect-ratio: 1 / 1; */
   /* flex-grow: 1; */
   width: 100%;
-  height: 23vh;
+  height: 22vh;
   /* Set width to 100% for responsiveness */
   max-width: 700px;
   /* Set a maximum width for larger screens */
@@ -194,7 +194,7 @@ button:hover {
   color: #b8676779;
   line-height: 2;
   /* Adjust line height to reduce spacing */
-  font-size: 18px;
+  font-size: clamp(22px, 1vw, 28px);
   /* Adjust font size as needed */
 
 }
