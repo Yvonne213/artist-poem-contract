@@ -226,12 +226,15 @@ h1 {
   color: #484848be;
   text-transform: uppercase;
   font-size: clamp(50px, 1.2vw, 100px);
-  font-family: "magistral", sans-serif;
-  font-weight: 700;
+
+  font-family: "poppins", sans-serif;
+  font-weight: 400;
   font-style: normal;
+  line-height: 90px;
+
   list-style: none;
   background-color: rgba(255, 173, 173, 0.119);
-  padding: 160px 20px;
+  padding: 100px 20px;
   height: auto;
 }
 
@@ -254,6 +257,7 @@ h1 {
 }
 
 .history-record {
+  list-style: none;
   text-align: left;
   margin: auto;
   /* Center the div horizontally */
@@ -267,8 +271,7 @@ h1 {
   font-family: "magistral", sans-serif;
   font-weight: 400;
   font-style: normal;
-
-  list-style: none;
+  
   scroll-behavior: smooth;
   overflow: scroll;
   /* Center the div horizontally */
@@ -309,7 +312,7 @@ h1 {
 }
 
 
-.signature {
+.currentArtist {
   background-color: #ffc2c227;
   padding: 20px 20px;
   flex-grow: 1;
