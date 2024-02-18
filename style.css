@@ -258,13 +258,7 @@ h1 {
 
 }
 
-.note {
-  margin-top: -20px;
-  font-size: clamp(22px, 1vw, 20px);
-  font-family: "magistral", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
+
 
 .history-list {
   list-style: none;
@@ -330,13 +324,21 @@ h1 {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   /* Add some padding for better visibility */
   /*width: 460px; /* Set the width of the session */
   /* Set the height of the session */
   line-height: 0.7;
   /* Adjust the line-height value as needed */
   border: 2px solid rgba(254, 72, 72, 0.518);
+}
+.note {
+  margin-top: -20px;
+  font-size: clamp(15px, 1vw, 20px);
+  font-family: "magistral", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color:rgb(255, 179, 179);
 }
 .button-right {
   display: flex;
