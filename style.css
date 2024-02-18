@@ -337,7 +337,7 @@ font-size: clamp(10px, 1vw, 20px);
   font-family: "magistral", sans-serif;
   font-weight: 500;
   font-style: normal;
-  color:rgb(255, 179, 179);
+  color:rgb(221, 160, 160);
 }
 .button-right {
   display: flex;
