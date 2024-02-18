@@ -244,8 +244,9 @@ h1 {
   /* max-width: 800px; */
   padding: 10px;
   /* margin: auto;  */
-  font-size: 20px;
+  font-size: 23px;
   background-color: rgba(255, 211, 211, 0.282);
+
 }
 
 .note {
@@ -256,7 +257,7 @@ h1 {
   font-style: normal;
 }
 
-.history-record {
+.history-list {
   list-style: none;
   text-align: left;
   margin: auto;
@@ -268,9 +269,10 @@ h1 {
   /* Enable vertical scrolling when content exceeds the height */
 
   font-size: clamp(18px, 1vw, 35px);
-  font-family: "magistral", sans-serif;
+  font-family: "poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
+  line-height:25px;
   
   scroll-behavior: smooth;
   overflow: scroll;
