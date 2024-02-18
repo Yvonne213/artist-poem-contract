@@ -177,9 +177,9 @@ setInterval(changePlaceholder, 3000);
 
         if (verbInput || nounInput || timeInput) {
             const line1 = `The person who`;
-            const line2 = `${verbInput} ${nounInput}`.padStart(4+ `${verbInput} ${nounInput}`.length);
-            const line3 = `${timeInput}`.padStart(8 + `${timeInput}`.length);
-            const line4 = `is an artist.`.padStart(12 + `is an artist`.length);
+            const line2 = `${verbInput} ${nounInput}`.padStart(5+ `${verbInput} ${nounInput}`.length);
+            const line3 = `${timeInput}`.padStart(10 + `${timeInput}`.length);
+            const line4 = `is an artist.`.padStart(15 + `is an artist`.length);
 
             const generatedSentence = `${line1}\n${line2}\n${line3}\n${line4}`;
 
@@ -244,9 +244,9 @@ setInterval(changePlaceholder, 3000);
         //   document.getElementById("current").innerText = `The person who ${randomVerb} ${randomNoun} ${randomTime} is an artist.`;
         
         const line1 = `The person who`;
-        const line2 = `${randomVerb} ${randomNoun}`;
-        const line3 = `${randomTime}`;
-        const line4 = `is an artist.`;
+        const line2 = `${verbInput} ${nounInput}`.padStart(5+ `${verbInput} ${nounInput}`.length);
+        const line3 = `${timeInput}`.padStart(10 + `${timeInput}`.length);
+        const line4 = `is an artist.`.padStart(15 + `is an artist`.length);
        
         
 

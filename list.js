@@ -6,7 +6,7 @@ var ws = new WebSocket("ws://192.168.194.100:8765");
 ws.onmessage = function (event) {
   // trigger the message update
   console.log("sentence received! do something here!");
-  console.log(event.data);
+  console.log(event.data.toUpperCase());
   generatedSentence = event.data.toUpperCase();
 
   // Add the generated sentence to the history
@@ -23,7 +23,7 @@ ws.onmessage = function (event) {
   }
   sentenceHistory.forEach((sentence, index) => {
     const listItem = document.createElement("li");
-    listItem.textContent = sentence.toUpperCase();
+    listItem.textContent = sentence();
 
     historyList.appendChild(listItem);
   });
