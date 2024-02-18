@@ -242,11 +242,18 @@ setInterval(changePlaceholder, 3000);
 
         // Display the generated artist in your HTML (adjust as needed)
         //   document.getElementById("current").innerText = `The person who ${randomVerb} ${randomNoun} ${randomTime} is an artist.`;
+        
         const line1 = `The person who`;
-        const line2 = `${randomVerb} ${randomNoun}`;
-        const line3 = `${randomTime}`;
-        const line4 = `is an artist`;
+        const line2 = `${randomVerb} ${randomNoun}`.padStart(2+`${randomVerb} ${randomNoun}`.length);
+        const line3 = `${randomTime}`.padStart(4 +  `${randomTime}`.length);
+        const line4 = `is an artist`.padStart(6 + `is an artist`.length);
         // Concatenate the lines with line breaks
+        
+console.log(line1);
+console.log(line2);
+console.log(line3);
+console.log(line4);
+
         const artistDescription = `${line1}\n${line2}\n${line3}\n${line4}`;
         // Display the generated artist in your HTML
         console.log(artistDescription);
