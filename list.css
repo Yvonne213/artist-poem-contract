@@ -24,17 +24,12 @@ body {
   min-height: 100vh;
 }
 
-.tips {
-  font-size: clamp(2vw, 1vw, 4vw);
-  /*!!!based on the screen size to change*/
-  color: #f7c6c6;
-}
 
 .previous-artist-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  /* align-items: center; */
+  /* justify-content: center; */
+  align-items: center;
 
   border: clamp(0.1vw, 0.2vw, 0.6vw) solid #f7c6c6;
   width: 62vw;
@@ -48,7 +43,7 @@ body {
 
 
 .history-list {
-  text-align: center;
+  /* text-align: center; */
   box-sizing: border-box;
   overflow: auto;
 
@@ -78,7 +73,7 @@ body {
   width: 100%;
   /* border-bottom: 1px dotted black; */
   border-style: hidden;
-  padding: clamp(2vw, 3vw, 40vw) 0;
+  padding: clamp(2vw, 3vw, 40vw) clamp(20px, 5vw, 50px);
 }
 
 /* Media Query for smaller screens */
