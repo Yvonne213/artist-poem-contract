@@ -5,7 +5,7 @@ html {
   z-index: 1;
 
   background-color: rgb(255, 255, 255);
-  color: rgb(226, 117, 117);
+  color: rgb(206, 86, 86);
   text-align: center;
 
   font-family: "magistral", sans-serif;
@@ -201,7 +201,7 @@ button:hover {
 
 /***************************************/
 .session2 {
-  background-color: #feaaaa16;
+  background-color: #feaaaa0c;
   padding: 20px;
   /* Add some padding for better visibility */
   /* width: 800px;  Set the width of the session */
@@ -347,7 +347,7 @@ font-size: clamp(10px, 1vw, 20px);
   display: flex;
   gap: 20px;
   /* Adjust the space between buttons by changing this value */
-  background-color: #ffc2c227;
+  background-color:#feaaaa0c;
   padding: 20px;
   /* Add some padding for better visibility */
   /* width: 480px; /* Set the width of the session */
