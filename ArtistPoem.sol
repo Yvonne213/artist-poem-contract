@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.17;
+pragma solidity ^0.8.24;
 
 
 contract artistpoem{
@@ -8,7 +8,7 @@ string[] public nounList;
 string[] public timeList;
 
 constructor() {
-    verbList = ["creates", "steals", "plants", "circles", "plays", "draws", "chases", "watched", "holds", "micmics"];
+    verbList = ["creates", "steals", "plants", "circles", "plays", "draws", "chases", "watched", "holds", "mimics"];
     nounList = ["circles", "triangles", "brushes", "plants", "human", "animals", "a bird", "soul", "the world", "an apple"];
     timeList = [ "every moment",
   "while walking",

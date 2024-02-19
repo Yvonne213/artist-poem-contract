@@ -60,7 +60,7 @@ async function main() {
 
     // Check if user is signed in to correct network
     const chainId = await provider.getNetwork();
-    if (chainId.chainId != 80001) {
+    if (chainId.chainId != 137) {
         alert("Please switch to the Mumbai in MetaMask. The page will refresh automatically after switching.");
         // loadingIconConnect.style.display = "none";
         return;
