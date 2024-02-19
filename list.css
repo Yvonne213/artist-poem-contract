@@ -77,7 +77,7 @@ body {
   width: 100%;
   /* border-bottom: 1px dotted black; */
   border-style: hidden;
-  padding: clamp(2vw, 3vw, 40vw) clamp(20px, 5vw, 50px);
+  padding: clamp(2vw, 3vw, 40vw) clamp(30px, 6vw, 60px);
 }
 
 /* Media Query for smaller screens */
