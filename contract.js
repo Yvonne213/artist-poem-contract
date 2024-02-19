@@ -5,6 +5,10 @@
 */
 const CONNECT_AUTOMATICALLY = true;
 
+var sentenceHistory = [];
+
+
+
 if (CONNECT_AUTOMATICALLY) {
     main();
 } else {
@@ -168,7 +172,6 @@ setInterval(changePlaceholder, 3000);
    
 
 //--------------------display type-in--------------------------------------------
-    const sentenceHistory = [];
     function generateUserSentence() {
         const verbInput = document.getElementById("verbInput").value;
         const nounInput = document.getElementById("nounInput").value;
@@ -260,12 +263,15 @@ setInterval(changePlaceholder, 3000);
 
         //----------------
         // Add the generated artist description to the history list
+
+        console.log(sentenceHistory);
+
         sentenceHistory.push(artistDescription);
 
         // Update the sentence history list
         const historyList = document.getElementById("history");
         if (historyList) {
-            historyList.innerHTML = innerhtml.append;
+            historyList.innerHTML = '';
         }
         sentenceHistory.forEach((sentence, index) => {
             const listItem = document.createElement("li");
@@ -276,7 +282,7 @@ setInterval(changePlaceholder, 3000);
 
         historyList.scrollTop = historyList.scrollHeight;
         //add 2024.2.11
-        const sentenceHistory = [];
+        //const sentenceHistory = [];
         // } catch (error) {
         //     console.error("Error generating artist:", error);
         // }
