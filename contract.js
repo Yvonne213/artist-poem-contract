@@ -133,7 +133,7 @@ setInterval(changePlaceholder, 3000);
       
 
         // Add the generated sentence to the history
-        sentenceHistory.push(generatedSentence);
+        sentenceHistory.push(generatedSentence.toUpperCase());
 
         // Check if the current page is the third HTML page
         const isThirdHTML = window.location.href.includes("list.html");
@@ -141,7 +141,7 @@ setInterval(changePlaceholder, 3000);
         // Update the terminal with the latest sentence (on other pages)
         if (!isThirdHTML) {
             const terminal = document.getElementById("userSentence");
-            terminal.textContent = generatedSentence;
+            terminal.textContent = generatedSentence.toUpperCase();
 
         }
 
@@ -190,7 +190,7 @@ setInterval(changePlaceholder, 3000);
             // Update the sentence history list
             const historyList = document.getElementById("history");
             const listItem = document.createElement("li");
-            listItem.textContent = generatedSentence;
+            listItem.textContent = generatedSentence.toUpperCase();
             historyList.appendChild(listItem);
 
             historyList.scrollTop = historyList.scrollHeight;
@@ -201,7 +201,7 @@ setInterval(changePlaceholder, 3000);
             document.getElementById("timeInput").value = '';
 
             // Add the generated sentence to the history
-            sentenceHistory.push(generatedSentence);
+            sentenceHistory.push(generatedSentence.toUpperCase());
         }
     }
 

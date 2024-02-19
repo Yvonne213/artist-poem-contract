@@ -23,7 +23,7 @@ ws.onmessage = function (event) {
   }
   sentenceHistory.forEach((sentence, index) => {
     const listItem = document.createElement("li");
-    listItem.textContent = sentence().toUpperCase();
+    listItem.textContent = sentence.toUpperCase();
 
     historyList.appendChild(listItem);
   });
