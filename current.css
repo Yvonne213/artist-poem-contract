@@ -24,13 +24,13 @@ body {
 
 .terminal1 {
     box-sizing: border-box; 
-    width: 90vw;/*!!!based on the screen size to adjust*/
+    width: 93vw;/*!!!based on the screen size to adjust*/
     height:80vh;
     /* text-align: left; */
   border: clamp(1px, 0.3vw, 20px) solid #fc8888;
   /* padding: clamp(4vw, 4vw, 10vw) clamp(4vw, 1vw, 20vw); */
   white-space: pre-wrap;
-  font-size: clamp(5vw, 1.3vw, 10vw);
+  font-size: clamp(10px,6vw, 200px);
   line-height:1.5;
   /* Hide scrollbars */
 
