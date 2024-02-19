@@ -244,8 +244,8 @@ setInterval(changePlaceholder, 3000);
         //   document.getElementById("current").innerText = `The person who ${randomVerb} ${randomNoun} ${randomTime} is an artist.`;
         
         const line1 = `The person who`;
-        const line2 = `${verbInput} ${nounInput}`.padStart(5+ `${verbInput} ${nounInput}`.length);
-        const line3 = `${timeInput}`.padStart(10 + `${timeInput}`.length);
+        const line2 = `${randomVerb} ${randomNoun}`.padStart(5+ `${randomVerb} ${randomNoun}`.length);
+        const line3 = `${randomTime}`.padStart(10 + `${randomTime}`.length);
         const line4 = `is an artist.`.padStart(15 + `is an artist`.length);
        
         
