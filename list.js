@@ -35,7 +35,7 @@ ws.onmessage = function (event) {
 const sentenceHistory = [];
 
 let currentTop = 0; // Track the current top position of the history list
-const scrollSpeed = 0.7; // Adjust this to control the speed of the scroll
+const scrollSpeed = 1; // Adjust this to control the speed of the scroll
 
 function updateScroll() {
   const historyList = document.getElementById("history");
