@@ -59,7 +59,7 @@ body {
   /* IE and Edge */
   /* scrollbar-width: none; */
   /* Firefox */
-  font-size: clamp(0.5vw, 4vw, 100vw);
+  font-size: clamp(0.5vw, 3.8vw, 100vw);
   /*!!!based on the screen size to adjust*/
   list-style: none;
   /* Remove the default list-style */
