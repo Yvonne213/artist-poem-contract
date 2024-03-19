@@ -173,10 +173,10 @@ setInterval(changePlaceholder, 3000);
 
 //--------------------display type-in--------------------------------------------
     function generateUserSentence() {
-        const verbInput = document.getElementById("verbInput").value;
-        const nounInput = document.getElementById("nounInput").value;
-        const timeInput = document.getElementById("timeInput").value;
-
+    const verbInput = document.getElementById("verbInput").value.trim();
+    const nounInput = document.getElementById("nounInput").value.trim();
+    const timeInput = document.getElementById("timeInput").value.trim();
+    
 
         if (verbInput || nounInput || timeInput) {
             const line1 = `The person who`;
@@ -206,8 +206,22 @@ setInterval(changePlaceholder, 3000);
             // Add the generated sentence to the history
             sentenceHistory.push(generatedSentence.toUpperCase());
         }
+      
     }
 
+  // Add an event listener to the "Set Artist" button
+  document.getElementById("setArtistButton").addEventListener("click", function() {
+    const verbInput = document.getElementById("verbInput").value.trim();
+    const nounInput = document.getElementById("nounInput").value.trim();
+    const timeInput = document.getElementById("timeInput").value.trim();
+
+    // Check if any of the inputs are empty
+    if (verbInput === '' || nounInput === '' || timeInput === '') {
+        // Display a popup reminder
+        alert("Please fill in all fields.");
+        return; // Exit the function early
+    }
+});
 
     // const displayButton = document.getElementById("setArtistButton");
     // // Add click event listener to the "Display Sentence" button
