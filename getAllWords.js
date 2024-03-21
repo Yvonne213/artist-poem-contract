@@ -88,7 +88,7 @@ async function main() {
     // require us to send a transaction (like changing a number on the blockchain)
     const contractWithSigner = contract.connect(signer);
 
-    let len = 58
+    let len = 200
     let verbs = "";
     for(let i = 0; i < len; i++) {
 
