@@ -251,7 +251,21 @@ setInterval(changePlaceholder, 3000);
 
     // Generate New Artist Button Click Event
     document.getElementById("generateArtistButton").addEventListener("click", async () => {
-        // try {
+        // Initialize click count and waiting flag if not already done
+    if (typeof window.clickCount === 'undefined') {
+        window.clickCount = 0;
+        window.isWaiting = false;
+    }
+
+    // Check if waiting or click count reached limit
+    if (window.isWaiting || window.clickCount >= 3) {
+        alert('Please wait for 10 seconds before clicking again.'); // Notify the user
+        console.log('Wait for 10 seconds to click again.');
+        return; // Prevent further execution
+    }
+
+    window.clickCount++; // Increment click count
+        try {
         // Call the getRandomVerb, getRandomNoun, and getRandomTime functions in your smart contract
         const randomVerb = await contractWithSigner.getRandomVerb();
         const randomNoun = await contractWithSigner.getRandomNoun();
@@ -274,6 +288,7 @@ setInterval(changePlaceholder, 3000);
         // document.getElementById("userSentence").innerText = artistDescription;
 
         sendMessage(artistDescription);
+
 
         //----------------
         // Add the generated artist description to the history list
@@ -300,7 +315,22 @@ setInterval(changePlaceholder, 3000);
         // } catch (error) {
         //     console.error("Error generating artist:", error);
         // }
-    });
+
+    if (window.clickCount === 3) {
+            // Start waiting period
+            window.isWaiting = true;
+            console.log('Reached 3 clicks. Please wait 10 seconds.');
+
+            setTimeout(() => {
+                console.log('You can click the button again.');
+                window.clickCount = 0; // Reset click count
+                window.isWaiting = false; // Allow clicking again
+            }, 10000); // 10 seconds wait
+        }
+    } catch (error) {
+        console.error("Error generating artist:", error);
+    }
+});
 
 
 
