@@ -52,4 +52,4 @@ function updateScroll() {
   historyList.style.top = `-${currentTop}px`; // Apply the new top position
 }
 
-setInterval(updateScroll, 5); // Adjust interval for smoother or faster scrolling
+setInterval(updateScroll, 50); // Adjust interval for smoother or faster scrolling

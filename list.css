@@ -4,8 +4,8 @@ html {
   position: relative;
   z-index: 1;
 
-  background-color: rgb(0, 0, 0);
-  color: rgb(253, 127, 127);
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 
 
   font-family: "pf-videotext", sans-serif;
@@ -32,7 +32,7 @@ body {
   align-items: center;
 
   border: clamp(0.1vw, 0.2vw, 0.6vw) solid #f7c6c6;
-  width: 90vw;
+  width: 62vw;
   /*!!!based on the screen size to adjust*/
   height: 90vh;
 
@@ -59,7 +59,7 @@ body {
   /* IE and Edge */
   /* scrollbar-width: none; */
   /* Firefox */
-  font-size: clamp(3vw, 6vw, 100vw);
+  font-size: clamp(0.5vw, 3.8vw, 100vw);
   /*!!!based on the screen size to adjust*/
   list-style: none;
   /* Remove the default list-style */
@@ -74,10 +74,10 @@ body {
 }
 
 #history li {
-  width: 95%;
+  width: 100%;
   /* border-bottom: 1px dotted black; */
   border-style: hidden;
-  padding: clamp(2vw, 3vw, 40vw) clamp(30px, 6vw, 30px);
+  padding: clamp(2vw, 3vw, 40vw) clamp(30px, 6vw, 60px);
 }
 
 /* Media Query for smaller screens */
